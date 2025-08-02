@@ -26,10 +26,9 @@
 
 ### **精选机场服务商推荐**
 ---
-
 | 服务名称 | 最新优惠码 | 机场链接 | 简要说明 |
 | :--- | :--- | :--- | :--- |
-| Gatern | `65ZGFN29XB` (年付75折) \<br\> `OVP56BZ8E8` (其他85折) | [访问 Gatern](https://pianyivpn.com/go/gatern/) | IPLC 专线，全节点高性价比，支持小众国家线路 |
+| Gatern | `65ZGFN29XB` (年付75折) <br> `OVP56BZ8E8` (其他85折) | [访问 Gatern](https://pianyivpn.com/go/gatern/) | IPLC 专线，全节点高性价比，支持小众国家线路 |
 | 飞鸟机场 | 无 | [访问飞鸟机场](https://pianyivpn.com/go/flyingbird/) | 纯IEPL中转，速度稳定，适合视频流畅观看 |
 | Totoro Cloud | 无 | [访问 Totoro Cloud](https://pianyivpn.com/go/totoro/) | Trojan 协议为主，支持 GPT、流媒体 |
 | 觅云 MeCloud | 新用户有 9.9 元试用 | [访问觅云](https://pianyivpn.com/go/mecloud/) | 独服 IPLC+BGP，三年稳定运营，支持流媒体解锁 |
@@ -45,5 +44,4 @@
 | MESL | 无 | [访问 MESL](https://pianyivpn.com/go/mesl/) | 集成 VPS + 机场服务，适合技术用户 |
 | 闪电猫 | 无 | [访问闪电猫](https://pianyivpn.com/go/speedcat/) | 专为手机端优化，节点较快 |
 | SSRDOG | 无 | [访问 SSRDOG](https://pianyivpn.com/go/ssrdog/) | 更新活跃，支持多协议，交流社区强 |
-| 肥猫云 | 无 | [访问 肥猫云](https://pianyivpn.com/go/fatcat/)  | 全部节点为独立专线，游戏/流媒体首选 |
----
+| 肥猫云 | 无 | [访问 肥猫云](https://pianyivpn.com/go/fatcat/) | 全部节点为独立专线，游戏/流媒体首选 |
