@@ -14,9 +14,8 @@
     <style>
         /* --- 基础样式 --- */
         body {
-            /* 更新：优化字体栈和阅读体验 */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            line-height: 1.7; /* 更新：增大行间距 */
+            line-height: 1.7;
             color: #333;
             background-color: #f0f2f5;
             margin: 0;
@@ -332,7 +331,7 @@
         p, li {
             font-size: 16px;
             color: #555;
-            letter-spacing: 0.5px; /* 更新：增加字间距 */
+            letter-spacing: 0.5px;
         }
         a {
             color: #007bff;
@@ -726,30 +725,50 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // --- 在这里定义您的广告代码 ---
-            const adConfig = {
-                
-                // 横幅广告位 #1 的内容 (可以是Google AdSense代码, 图片链接等HTML)
-                banner1: `<span>横幅广告位 1 (1360x90)</span>`,
+            
+            // --- 网站集成配置 ---
+            const siteIntegrationConfig = {
+                // 1. Google Search Console 验证代码 (将 YOUR_CODE 替换为你的代码)
+                googleSiteVerification: ``,
 
-                // 横幅广告位 #2 的内容
+                // 2. Bing Webmaster / IndexNow 验证代码 (将 YOUR_CODE 替换为你的代码)
+                bingSiteVerification: ``,
+
+                // 3. Google Analytics (GA4) 跟踪代码 (将 G-XXXXXXXXXX 替换为你的 GA4 Measurement ID)
+                googleAnalytics: `
+                    `
+            };
+
+            // --- 广告配置 ---
+            const adConfig = {
+                banner1: `<span>横幅广告位 1 (1360x90)</span>`,
                 banner2: `<span>横幅广告位 2 (1360x90)</span>`,
-                
-                // 侧边栏广告位的内容
                 sidebar: `<span>侧边栏广告位</span>`
             };
 
-            // --- 下方的代码负责将广告填充到页面，无需修改 ---
+
+            // --- 下方的代码负责将配置注入页面，无需修改 ---
+            
+            // 注入网站集成代码
+            if (siteIntegrationConfig.googleSiteVerification) {
+                document.head.insertAdjacentHTML('beforeend', siteIntegrationConfig.googleSiteVerification);
+            }
+            if (siteIntegrationConfig.bingSiteVerification) {
+                document.head.insertAdjacentHTML('beforeend', siteIntegrationConfig.bingSiteVerification);
+            }
+            if (siteIntegrationConfig.googleAnalytics) {
+                document.head.insertAdjacentHTML('beforeend', siteIntegrationConfig.googleAnalytics);
+            }
+
+            // 注入广告代码
             const adBanner1 = document.getElementById('ad-banner-1');
             if (adBanner1) {
                 adBanner1.innerHTML = adConfig.banner1;
             }
-
             const adBanner2 = document.getElementById('ad-banner-2');
             if (adBanner2) {
                 adBanner2.innerHTML = adConfig.banner2;
             }
-
             const adSidebar = document.getElementById('ad-sidebar');
             if (adSidebar) {
                 adSidebar.innerHTML = adConfig.sidebar;
