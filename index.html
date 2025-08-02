@@ -1,3 +1,19 @@
+好的，遵照您的要求，我们来新增一个“精选高端机场”栏目。
+
+### 主要改动
+
+1.  **新增“精选高端机场”栏目**：在“性价比便宜机场”的**上方**，我们创建了一个全新的栏目，标题为 `<h3>精选高端机场</h3>`。
+2.  **创建占位表格**：按照您的指示，在这个新栏目下，我们创建了一个与下方表格结构完全相同的表格，并其中包含了 **3 个空白行**作为内容占位符。
+3.  **增加视觉分隔**：在两个栏目之间，我们增加了一条水平分割线 `<hr>`，使两部分界限更清晰。
+4.  **更新快速导航**：在右侧侧边栏的“快速导航”中，已经同步增加了指向“精选高端机场”的链接。
+
+下面是修改后的完整 `index.html` 代码。
+
+-----
+
+### `index.html` 完整代码 (已新增高端机场栏目)
+
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -28,14 +44,14 @@
             height: 90px;
             display: flex;
             align-items: center;
-            justify-content: center; /* 居中Header内容 */
+            justify-content: center;
         }
 
         .header-container {
             width: 100%;
             max-width: 1360px;
             margin: 0 auto;
-            text-align: center; /* 使文字居中 */
+            text-align: center;
         }
 
         .site-branding .site-title {
@@ -52,20 +68,20 @@
             color: #777;
         }
         
-        /* --- 新增：横幅广告区样式 --- */
+        /* --- 横幅广告区样式 --- */
         .banner-ad-section {
             padding: 15px 0;
             background-color: #e9ecef;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 15px; /* 两个广告位之间的间距 */
+            gap: 15px;
         }
 
         .banner-ad {
             width: 100%;
-            max-width: 1360px; /* 广告最大宽度 */
-            height: 90px;      /* 广告高度 */
+            max-width: 1360px;
+            height: 90px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -154,8 +170,18 @@
             color: #aaa;
             font-size: 1.2em;
         }
+        
+        /* --- FAQ 样式 --- */
+        .faq-item {
+            margin-bottom: 1.5em;
+        }
+        .faq-item h4 {
+            border: none;
+            padding-bottom: 0;
+            margin-bottom: 0.5em;
+        }
 
-        /* --- 响应式设计：小屏幕下的样式 --- */
+        /* --- 响应式设计 --- */
         @media (max-width: 992px) {
             .main-container {
                 flex-direction: column; 
@@ -177,7 +203,6 @@
                  font-size: 1em;
              }
         }
-
 
         /* --- 其他元素样式 --- */
         h1, h2, h3, h4 {
@@ -342,8 +367,44 @@
                     </tr>
                 </tbody>
             </table>
+            
+            <hr>
 
-            <h3 id="recommendations">精选机场服务商推荐</h3>
+            <h3 id="premium-airports">精选高端机场</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>服务名称</th>
+                        <th>最新优惠码</th>
+                        <th>机场链接</th>
+                        <th>简要说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+            <h3 id="recommendations">性价比便宜机场</h3>
             <table>
                 <thead>
                     <tr>
@@ -458,6 +519,50 @@
                     </tr>
                 </tbody>
             </table>
+            
+            <hr>
+
+            <h3 id="faq">机场使用常见问题 (FAQ)</h3>
+            <div class="faq-item">
+                <h4>1. 什么是机场？和VPN有什么区别？</h4>
+                <p>简单来说，“机场”是提供代理服务的社区化名称，它使用SS/Trojan/VLESS等特定协议。与传统VPN相比，机场的流量特征更难被识别，抗封锁能力更强，且通常提供更灵活的路由规则（如国内网站直连，国外网站代理），使用体验更智能。</p>
+            </div>
+            <div class="faq-item">
+                <h4>2. 什么是订阅链接？如何使用？</h4>
+                <p>订阅链接是一个包含了所有服务器节点信息的URL。您无需手动一个个配置节点，只需将这个链接复制到Clash、Shadowrocket等客户端中，客户端会自动拉取并更新所有节点信息，非常方便。</p>
+            </div>
+            <div class="faq-item">
+                <h4>3. Clash, Shadowrocket, V2RayN 这些软件是什么关系？</h4>
+                <p>它们都是代理客户端软件，是使用机场服务的“遥控器”。<br>
+                - <strong>Clash (及其衍生版如Clash Verge/Meta)</strong>：是目前Windows/macOS/Android上功能最强大、最主流的客户端。<br>
+                - <strong>Shadowrocket (小火箭)</strong>：是iOS平台上最受欢迎的客户端，功能全面，简单易用。<br>
+                - <strong>V2RayN</strong>：是Windows平台一个老牌且功能丰富的客户端。</p>
+            </div>
+            <div class="faq-item">
+                <h4>4. 为什么我的机场突然不能用了？</h4>
+                <p>可能的原因有很多，您可以按以下步骤排查：<br>
+                1. 在客户端内手动更新一次订阅链接，看是否恢复。<br>
+                2. 检查机场官网能否打开，看是否有维护公告。<br>
+                3. 尝试切换不同的节点，可能只是个别节点出现故障。<br>
+                4. 检查本地网络环境，或重启路由器和电脑。</p>
+            </div>
+            <div class="faq-item">
+                <h4>5. 线路速度慢怎么办？</h4>
+                <p>速度慢同样受多种因素影响：<br>
+                - **本地带宽**：您的家庭或移动网络带宽是基础。<br>
+                - **高峰时段**：晚高峰（晚上8点-11点）国际出口拥堵，速度下降是正常现象，专线（IEPL）会好很多。<br>
+                - **节点选择**：尝试切换到负载较低或物理距离更近的节点（如香港、日本、新加坡）。<br>
+                - **客户端设置**：在Clash等客户端中，可以开启“负载均衡”或“自动选择”模式，让软件为您挑选最快的节点。</p>
+            </div>
+            <div class="faq-item">
+                <h4>6. 我需要购买最贵的套餐吗？</h4>
+                <p>完全没必要。请根据您的实际需求选择。对于大多数日常查资料、看视频的用户，入门或中档套餐的流量和速率已经完全足够。只有对稳定性和延迟有极高要求的专业用户（如跨境电商、游戏玩家）才需要考虑更高等级的专线套餐。</p>
+            </div>
+            <div class="faq-item">
+                <h4>7. 我人在国外，可以用来访问国内的网站/App吗？（回国模式）</h4>
+                <p>这取决于您选择的机场服务。大部分机场主要提供“出海”服务，但一些特定的服务商也会提供“回国线路”。这些线路的服务器位于中国大陆，专门用于帮助海外华人访问有地区限制的国内服务，如哔哩哔哩、腾讯视频、网易云音乐等。在购买前，请务必查看服务商的节点列表或特色说明，确认其是否明确支持“回国”功能。使用时，您需要在客户端中手动选择标记为“回国”的节点。</p>
+            </div>
+
         </main>
 
         <aside class="sidebar">
@@ -467,7 +572,9 @@
                     <li><a href="#principles">核心原则与避坑指南</a></li>
                     <li><a href="#how-to-choose">如何选择机场</a></li>
                     <li><a href="#protocols">协议简明对比</a></li>
-                    <li><a href="#recommendations">精选服务商推荐</a></li>
+                    <li><a href="#premium-airports">精选高端机场</a></li>
+                    <li><a href="#recommendations">性价比便宜机场</a></li>
+                    <li><a href="#faq">常见问题 (FAQ)</a></li>
                 </ul>
             </div>
              <div class="sidebar-widget">
@@ -488,3 +595,4 @@
     </div>
 </body>
 </html>
+```
