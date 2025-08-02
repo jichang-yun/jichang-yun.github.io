@@ -169,7 +169,7 @@
         /* --- Footer 样式 --- */
         .site-footer {
             background-color: #2c3e50;
-            color: #ccc;
+            color: #fff; /* 更新：所有文字改为白色 */
             text-align: center;
             padding: 25px 15px;
             margin-top: 30px;
@@ -177,6 +177,7 @@
         }
         .site-footer p {
             margin: 0 0 10px 0;
+            color: #fff; /* 更新：所有文字改为白色 */
         }
         .site-footer .footer-credits,
         .site-footer .footer-hosting {
@@ -761,13 +762,12 @@
                 const timeElapsed = Date.now() - parseInt(lastWarnedTimestamp, 10);
                 if (timeElapsed < cooldownPeriod) {
                     console.log('Cooldown active. Modal will not be shown.');
-                    return; // 冷却期未过，不执行任何操作
+                    return; 
                 }
             }
             
             function closeModal() {
                 modal.style.display = 'none';
-                // 存入当前时间戳
                 localStorage.setItem('chinaVisitorWarnedTimestamp', Date.now().toString());
             }
 
@@ -778,22 +778,37 @@
                 }
             });
 
-            // 获取IP地理位置
-            fetch('http://ip-api.com/json/?fields=status,countryCode')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
+            // IP API端点列表，提供备用
+            const ipApiEndpoints = [
+                'https://ip-api.com/json/?fields=status,countryCode',
+                'https://ipapi.co/json/'
+            ];
+
+            // 尝试从API获取地理位置的函数
+            async function fetchLocation(endpoints) {
+                for (const url of endpoints) {
+                    try {
+                        const response = await fetch(url);
+                        if (!response.ok) throw new Error('Network response was not ok');
+                        const data = await response.json();
+                        
+                        // 适配两种API的返回数据结构
+                        const countryCode = data.countryCode || data.country_code;
+
+                        if (countryCode === 'CN') {
+                             modal.style.display = 'flex';
+                             break; // 成功获取并判断后，跳出循环
+                        } else {
+                             break; // 成功获取但不是中国IP，也跳出循环
+                        }
+                    } catch (error) {
+                        console.error('Error fetching from', url, error);
+                        // 如果一个失败，循环会继续尝试下一个
                     }
-                    return response.json();
-                })
-                .then(data => {
-                    if (data.status === 'success' && data.countryCode === 'CN') {
-                        modal.style.display = 'flex'; // 显示弹窗
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching IP location:', error);
-                });
+                }
+            }
+            
+            fetchLocation(ipApiEndpoints);
         });
     </script>
 
