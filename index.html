@@ -48,6 +48,10 @@
             border: none;
             padding: 0;
         }
+        .site-title a {
+            color: inherit;
+            text-decoration: none;
+        }
 
         .site-description {
             margin: 0;
@@ -125,10 +129,10 @@
         .main-navigation-bar {
             background-color: #343a40;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            max-width: 1360px; /* 更新 */
-            margin: 0 auto; /* 更新 */
-            padding: 0 15px; /* 更新 */
-            box-sizing: border-box; /* 更新 */
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 0 15px;
+            box-sizing: border-box;
         }
         .nav-container {
             display: flex;
@@ -332,7 +336,7 @@
         }
 
         /* --- 响应式设计 --- */
-        @media (max-width: 1390px) { /* Adjust breakpoint for container padding */
+        @media (max-width: 1390px) {
             .main-navigation-bar {
                 margin-left: 15px;
                 margin-right: 15px;
@@ -499,7 +503,7 @@
     <!-- === Header区域 === -->
     <header class="site-header">
         <div class="header-container">
-            <h1 class="site-title">机场云</h1>
+            <h1 class="site-title"><a href="https://jichangyun.com/" style="color: inherit; text-decoration: none;">机场云</a></h1>
             <p class="site-description">专为跨境电商、流媒体、AI访问提供高性价比机场</p>
         </div>
     </header>
@@ -532,7 +536,7 @@
     <nav class="main-navigation-bar">
         <div class="nav-container">
              <ul>
-                <li><a href="#">主页</a></li>
+                <li><a href="https://jichangyun.com/">主页</a></li>
                 <li><a href="#">流媒体合租平台 <span class="hot-tag">hot</span></a></li>
             </ul>
         </div>
