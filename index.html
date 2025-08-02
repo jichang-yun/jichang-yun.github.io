@@ -103,7 +103,7 @@
             font-weight: 500;
             color: #495057;
             font-size: 1em;
-            position: relative; /* For pseudo-element positioning */
+            position: relative;
         }
         .principle-item:not(:last-child)::after {
             content: '';
@@ -112,7 +112,7 @@
             top: 50%;
             transform: translateY(-50%);
             width: 1px;
-            height: 80%; /* 更新：调整竖线高度 */
+            height: 80%;
             background-color: #e0e0e0;
         }
         .principle-item svg {
@@ -124,12 +124,13 @@
         /* --- 主导航栏样式 (Body内) --- */
         .main-navigation-bar {
             background-color: #343a40;
-            padding: 0 15px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 1360px; /* 更新 */
+            margin: 0 auto; /* 更新 */
+            padding: 0 15px; /* 更新 */
+            box-sizing: border-box; /* 更新 */
         }
         .nav-container {
-            max-width: 1360px;
-            margin: 0 auto;
             display: flex;
             justify-content: flex-start; /* 菜单靠左 */
         }
@@ -141,7 +142,7 @@
             gap: 5px;
         }
         .main-navigation-bar a {
-            display: flex; /* Flex to align tag */
+            display: flex;
             align-items: center;
             padding: 15px 25px;
             font-size: 1.1em;
@@ -331,6 +332,13 @@
         }
 
         /* --- 响应式设计 --- */
+        @media (max-width: 1390px) { /* Adjust breakpoint for container padding */
+            .main-navigation-bar {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+        }
+
         @media (max-width: 992px) {
             .main-container {
                 flex-direction: column; 
