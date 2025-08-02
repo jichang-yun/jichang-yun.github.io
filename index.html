@@ -9,6 +9,9 @@
     <meta name="description" content="机场云专为跨境电商、流媒体（Netflix/Hulu/YouTube/TikTok）、AI（ChatGPT/Gemini）访问提供高性价比机场。">
     <meta name="keywords" content="机场云, 机场推荐, 稳定机场, 2025, SS, V2Ray, Trojan, VLESS, Hysteria2, Clash, Shadowrocket, 小火箭, Quantumult X, Netflix, ChatGPT, 跨境电商, 流媒体解锁, 科学上网, 梯子, 节点">
     
+    <!-- SEO 优化：添加 Canonical 标签，防止重复内容 -->
+    <link rel="canonical" href="https://jichangyun.com/" />
+
     <meta name="baiduspider" content="noindex, nofollow">
 
     <style>
@@ -41,9 +44,11 @@
             align-items: center;
         }
 
+        /* SEO 优化：将h1改为p，保证页面只有一个h1 */
         .site-title {
             margin: 0;
             font-size: 2.2em;
+            font-weight: bold;
             color: #2c3e50;
             border: none;
             padding: 0;
@@ -63,7 +68,7 @@
         /* --- 横幅广告区样式 --- */
         .banner-ad-section {
             padding: 15px 0;
-            background-color: #f0f2f5; /* 更新：与body背景色一致 */
+            background-color: #f0f2f5;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -435,7 +440,10 @@
             margin-top: 24px;
             margin-bottom: 16px;
         }
-        .content h1 { font-size: 2em; } 
+        /* SEO 优化：确保内容区的标题是唯一的 h1 */
+        .content .main-title { 
+            font-size: 2em; 
+        } 
         h2 { font-size: 1.5em; }
         h3 { font-size: 1.25em; }
         h4 { font-size: 1.1em; }
@@ -487,6 +495,72 @@
             margin-bottom: 0.5em;
         }
     </style>
+    
+    <!-- SEO 优化：添加 JSON-LD 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "机场云",
+      "url": "https://jichangyun.com/"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "什么是机场？和VPN有什么区别？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "简单来说，“机场”是提供代理服务的社区化名称，它使用SS/Trojan/VLESS等特定协议。与传统VPN相比，机场的流量特征更难被识别，抗封锁能力更强，且通常提供更灵活的路由规则（如国内网站直连，国外网站代理），使用体验更智能。"
+        }
+      },{
+        "@type": "Question",
+        "name": "什么是订阅链接？如何使用？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "订阅链接是一个包含了所有服务器节点信息的URL。您无需手动一个个配置节点，只需将这个链接复制到Clash、Shadowrocket等客户端中，客户端会自动拉取并更新所有节点信息，非常方便。"
+        }
+      },{
+        "@type": "Question",
+        "name": "Clash, Shadowrocket, V2RayN 这些软件是什么关系？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "它们都是代理客户端软件，是使用机场服务的“遥控器”。Clash 是目前Windows/macOS/Android上功能最强大、最主流的客户端。Shadowrocket (小火箭)是iOS平台上最受欢迎的客户端。V2RayN是Windows平台一个老牌且功能丰富的客户端。"
+        }
+      },{
+        "@type": "Question",
+        "name": "为什么我的机场突然不能用了？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可能的原因有很多，您可以按以下步骤排查：1. 在客户端内手动更新一次订阅链接，看是否恢复。2. 检查机场官网能否打开，看是否有维护公告。3. 尝试切换不同的节点，可能只是个别节点出现故障。4. 检查本地网络环境，或重启路由器和电脑。"
+        }
+      },{
+        "@type": "Question",
+        "name": "线路速度慢怎么办？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "速度慢受多种因素影响：本地带宽、高峰时段、节点选择、客户端设置。晚高峰（晚上8点-11点）国际出口拥堵，速度下降是正常现象，专线（IEPL）会好很多。尝试切换到负载较低或物理距离更近的节点（如香港、日本、新加坡）。"
+        }
+      },{
+        "@type": "Question",
+        "name": "我需要购买最贵的套餐吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "完全没必要。请根据您的实际需求选择。对于大多数日常查资料、看视频的用户，入门或中档套餐的流量和速率已经完全足够。只有对稳定性和延迟有极高要求的专业用户（如跨境电商、游戏玩家）才需要考虑更高等级的专线套餐。"
+        }
+      },{
+        "@type": "Question",
+        "name": "我人在国外，可以用来访问国内的网站/App吗？（回国模式）",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "这取决于您选择的机场服务。大部分机场主要提供“出海”服务，但一些特定的服务商也会提供“回国线路”。这些线路的服务器位于中国大陆，专门用于帮助海外华人访问有地区限制的国内服务。在购买前，请务必查看服务商的节点列表或特色说明，确认其是否明确支持“回国”功能。"
+        }
+      }]
+    }
+    </script>
 </head>
 <body>
 
@@ -503,7 +577,8 @@
     <!-- === Header区域 === -->
     <header class="site-header">
         <div class="header-container">
-            <h1 class="site-title"><a href="https://jichangyun.com/" style="color: inherit; text-decoration: none;">机场云</a></h1>
+            <!-- SEO 优化：将h1改为p，并用CSS模拟样式 -->
+            <p class="site-title"><a href="https://jichangyun.com/">机场云</a></p>
             <p class="site-description">专为跨境电商、流媒体、AI访问提供高性价比机场</p>
         </div>
     </header>
@@ -532,7 +607,7 @@
         <div class="banner-ad" id="ad-banner-2"></div>
     </div>
 
-    <!-- === 主导航栏 (新位置) === -->
+    <!-- === 主导航栏 === -->
     <nav class="main-navigation-bar">
         <div class="nav-container">
              <ul>
@@ -545,6 +620,10 @@
     <div class="main-container">
         <!-- === 主内容区 === -->
         <main class="content">
+            <!-- SEO 优化：确保页面有且仅有一个h1 -->
+            <h1 class="main-title">2025年稳定好用的机场推荐 (SS/V2Ray/Trojan)</h1>
+            <h2>专为跨境电商、流媒体(YouTube/hulu/Netflix/TikTok)与AI(ChatGPT/Gemini)优化</h2>
+
             <p>旨在推荐一些经过市场检验、稳定可靠、高性价比的机场服务，并会根据网络环境变化进行不定期更新。所有推荐的服务均支持 Clash (Clash Verge/Meta)、Shadowrocket (小火箭)、Quantumult X (圈X)、V2RayN、sing-box 等主流订阅客户端。</p>
 
             <h3 id="principles">核心原则与避坑指南</h3>
