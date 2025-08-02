@@ -36,14 +36,14 @@
             width: 100%;
             max-width: 1360px;
             margin: 0 auto;
-            display: flex; /* 更新 */
-            justify-content: space-between; /* 更新 */
-            align-items: center; /* 更新 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .site-title {
             margin: 0;
-            font-size: 1.8em;
+            font-size: 2.8em; /* 更新：增大字体 */
             color: #2c3e50;
             border: none;
             padding: 0;
@@ -51,7 +51,7 @@
 
         .site-description {
             margin: 0;
-            font-size: 0.9em;
+            font-size: 1.1em; /* 更新：增大字体 */
             color: #777;
             text-align: right;
         }
@@ -266,8 +266,12 @@
                 flex-direction: column;
                 gap: 5px;
              }
+             .site-title {
+                font-size: 2em; /* 移动端标题字体 */
+             }
              .site-description {
                 text-align: center;
+                font-size: 1em; /* 移动端描述字体 */
              }
              .banner-ad {
                  height: 60px;
