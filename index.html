@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>机场云 - 稳定好用的机场推荐</title>
+    <title>机场云 - 2025年稳定好用的机场推荐</title>
     
     <meta name="description" content="机场云专为跨境电商、流媒体（Netflix/Hulu/YouTube/TikTok）、AI（ChatGPT/Gemini）访问提供高性价比机场。">
     <meta name="keywords" content="机场云, 机场推荐, 稳定机场, 2025, SS, V2Ray, Trojan, VLESS, Hysteria2, Clash, Shadowrocket, 小火箭, Quantumult X, Netflix, ChatGPT, 跨境电商, 流媒体解锁, 科学上网, 梯子, 节点">
@@ -203,6 +203,43 @@
                  height: 60px;
                  font-size: 1em;
              }
+             
+             /* --- 表格自适应样式 --- */
+            table {
+                border: 0;
+            }
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+            table tr {
+                display: block;
+                margin-bottom: 1.5em;
+                border-bottom: 3px solid #007bff;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            }
+            table td {
+                display: block;
+                text-align: right;
+                border-bottom: 1px dotted #ccc;
+                font-size: 15px;
+            }
+            table td::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+                color: #2c3e50;
+            }
+            table td:last-child {
+                border-bottom: 0;
+            }
         }
 
         /* --- 其他元素样式 --- */
@@ -222,11 +259,11 @@
             color: #555;
         }
         a {
-            color: #007bff; /* 颜色保持蓝色 */
-            text-decoration: underline; /* 默认带下划线 */
+            color: #007bff;
+            text-decoration: underline;
         }
         strong {
-            color: #FF0000; /* 修改为鲜红色 */
+            color: #FF0000;
         }
         code {
             font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
@@ -248,8 +285,6 @@
             border-collapse: collapse;
             margin-top: 1em;
             margin-bottom: 1em;
-            display: block;
-            overflow-x: auto;
         }
         th, td {
             border: 1px solid #dfe2e5;
@@ -286,6 +321,8 @@
 
     <div class="main-container">
         <main class="content">
+            <h1>2025年稳定好用的机场推荐 (SS/V2Ray/Trojan)</h1>
+            <h2>专为跨境电商、流媒体(YouTube/hulu/Netflix/TikTok)与AI(ChatGPT/Gemini)优化</h2>
 
             <p>旨在推荐一些经过市场检验、稳定可靠、高性价比的机场服务，并会根据网络环境变化进行不定期更新。所有推荐的服务均支持 Clash (Clash Verge/Meta)、Shadowrocket (小火箭)、Quantumult X (圈X)、V2RayN、sing-box 等主流订阅客户端。</p>
 
@@ -327,39 +364,39 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Shadowsocks (SS)</strong></td>
-                        <td>轻量级加密代理</td>
-                        <td>速度快，资源消耗极低</td>
-                        <td>流量特征明显，易被识别和封锁</td>
-                        <td>已过时，基本被淘汰</td>
+                        <td data-label="协议名称"><strong>Shadowsocks (SS)</strong></td>
+                        <td data-label="核心思想">轻量级加密代理</td>
+                        <td data-label="主要优点">速度快，资源消耗极低</td>
+                        <td data-label="主要缺点">流量特征明显，易被识别和封锁</td>
+                        <td data-label="当前地位">已过时，基本被淘汰</td>
                     </tr>
                     <tr>
-                        <td><strong>V2Ray (VMess)</strong></td>
-                        <td>模块化，深度伪装流量</td>
-                        <td>功能强大，伪装方式多，抗封锁能力强</td>
-                        <td>配置复杂，性能开销相对较大</td>
-                        <td>仍在使用，但正被VLESS替代</td>
+                        <td data-label="协议名称"><strong>V2Ray (VMess)</strong></td>
+                        <td data-label="核心思想">模块化，深度伪装流量</td>
+                        <td data-label="主要优点">功能强大，伪装方式多，抗封锁能力强</td>
+                        <td data-label="主要缺点">配置复杂，性能开销相对较大</td>
+                        <td data-label="当前地位">仍在使用，但正被VLESS替代</td>
                     </tr>
                     <tr>
-                        <td><strong>Trojan</strong></td>
-                        <td>模仿HTTPS流量，做到极致伪装</td>
-                        <td>安全性极高，性能好，不易被主动探测</td>
-                        <td>必须使用域名和TLS证书</td>
-                        <td><strong>主流协议</strong>，稳定可靠</td>
+                        <td data-label="协议名称"><strong>Trojan</strong></td>
+                        <td data-label="核心思想">模仿HTTPS流量，做到极致伪装</td>
+                        <td data-label="主要优点">安全性极高，性能好，不易被主动探测</td>
+                        <td data-label="主要缺点">必须使用域名和TLS证书</td>
+                        <td data-label="当前地位"><strong>主流协议</strong>，稳定可靠</td>
                     </tr>
                     <tr>
-                        <td><strong>VLESS</strong></td>
-                        <td>精简版VMess，专注性能</td>
-                        <td>性能卓越，延迟低，结合TLS后安全性高</td>
-                        <td>自身不加密，安全性完全依赖外层TLS</td>
-                        <td><strong>主流协议</strong>，高端机场首选</td>
+                        <td data-label="协议名称"><strong>VLESS</strong></td>
+                        <td data-label="核心思想">精简版VMess，专注性能</td>
+                        <td data-label="主要优点">性能卓越，延迟低，结合TLS后安全性高</td>
+                        <td data-label="主要缺点">自身不加密，安全性完全依赖外层TLS</td>
+                        <td data-label="当前地位"><strong>主流协议</strong>，高端机场首选</td>
                     </tr>
                     <tr>
-                        <td><strong>Hysteria / Hysteria2</strong></td>
-                        <td>暴力发包，榨干带宽</td>
-                        <td>恶劣网络下（晚高峰）速度极快</td>
-                        <td>流量特征(QUIC)可能被针对，消耗资源</td>
-                        <td><strong>新兴力量</strong>，作为高速专项协议</td>
+                        <td data-label="协议名称"><strong>Hysteria / Hysteria2</strong></td>
+                        <td data-label="核心思想">暴力发包，榨干带宽</td>
+                        <td data-label="主要优点">恶劣网络下（晚高峰）速度极快</td>
+                        <td data-label="主要缺点">流量特征(QUIC)可能被针对，消耗资源</td>
+                        <td data-label="当前地位"><strong>新兴力量</strong>，作为高速专项协议</td>
                     </tr>
                 </tbody>
             </table>
@@ -378,22 +415,22 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td data-label="服务名称">&nbsp;</td>
+                        <td data-label="最新优惠码">&nbsp;</td>
+                        <td data-label="机场链接">&nbsp;</td>
+                        <td data-label="简要说明">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td data-label="服务名称">&nbsp;</td>
+                        <td data-label="最新优惠码">&nbsp;</td>
+                        <td data-label="机场链接">&nbsp;</td>
+                        <td data-label="简要说明">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td data-label="服务名称">&nbsp;</td>
+                        <td data-label="最新优惠码">&nbsp;</td>
+                        <td data-label="机场链接">&nbsp;</td>
+                        <td data-label="简要说明">&nbsp;</td>
                     </tr>
                 </tbody>
             </table>
@@ -412,106 +449,106 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Gatern</td>
-                        <td><code>65ZGFN29XB</code> (年付75折) <br> <code>OVP56BZ8E8</code> (其他85折)</td>
-                        <td><a href="https://pianyivpn.com/go/gatern/" target="_blank" rel="noopener noreferrer">访问 Gatern</a></td>
-                        <td>IPLC 专线，全节点高性价比，支持小众国家线路</td>
+                        <td data-label="服务名称">Gatern</td>
+                        <td data-label="最新优惠码"><code>65ZGFN29XB</code> (年付75折) <br> <code>OVP56BZ8E8</code> (其他85折)</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/gatern/" target="_blank" rel="noopener noreferrer">访问 Gatern</a></td>
+                        <td data-label="简要说明">IPLC 专线，全节点高性价比，支持小众国家线路</td>
                     </tr>
                     <tr>
-                        <td>飞鸟机场</td>
-                        <td>无</td>
-                        <td><a href="https://pianyivpn.com/go/flyingbird/" target="_blank" rel="noopener noreferrer">访问飞鸟机场</a></td>
-                        <td>纯IEPL中转，速度稳定，适合视频流畅观看</td>
+                        <td data-label="服务名称">飞鸟机场</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/flyingbird/" target="_blank" rel="noopener noreferrer">访问飞鸟机场</a></td>
+                        <td data-label="简要说明">纯IEPL中转，速度稳定，适合视频流畅观看</td>
                     </tr>
                     <tr>
-                        <td>Totoro Cloud</td>
-                        <td>无</td>
-                        <td><a href="https://pianyivpn.com/go/totoro/" target="_blank" rel="noopener noreferrer">访问 Totoro Cloud</a></td>
-                        <td>Trojan 协议为主，支持 GPT、流媒体</td>
+                        <td data-label="服务名称">Totoro Cloud</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/totoro/" target="_blank" rel="noopener noreferrer">访问 Totoro Cloud</a></td>
+                        <td data-label="简要说明">Trojan 协议为主，支持 GPT、流媒体</td>
                     </tr>
                     <tr>
-                        <td>觅云 MeCloud</td>
-                        <td>新用户有 9.9 元试用</td>
-                        <td><a href="https://pianyivpn.com/go/mecloud/" target="_blank" rel="noopener noreferrer">访问觅云</a></td>
-                        <td>独服 IPLC+BGP，三年稳定运营，支持流媒体解锁</td>
+                        <td data-label="服务名称">觅云 MeCloud</td>
+                        <td data-label="最新优惠码">新用户有 9.9 元试用</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/mecloud/" target="_blank" rel="noopener noreferrer">访问觅云</a></td>
+                        <td data-label="简要说明">独服 IPLC+BGP，三年稳定运营，支持流媒体解锁</td>
                     </tr>
                     <tr>
-                        <td>Just My Socks</td>
-                        <td><code>JMS9272283</code> (循环9.48折)</td>
-                        <td><a href="https://pianyivpn.com/go/jms/" target="_blank" rel="noopener noreferrer">访问 Just My Socks</a></td>
-                        <td>搬瓦工官方机场，CN2 GIA 线路，不怕跑路</td>
+                        <td data-label="服务名称">Just My Socks</td>
+                        <td data-label="最新优惠码"><code>JMS9272283</code> (循环9.48折)</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/jms/" target="_blank" rel="noopener noreferrer">访问 Just My Socks</a></td>
+                        <td data-label="简要说明">搬瓦工官方机场，CN2 GIA 线路，不怕跑路</td>
                     </tr>
                     <tr>
-                        <td>LatteCloud</td>
-                        <td><code>50off</code> (年付/半年付)</td>
-                        <td><a href="https://pianyivpn.com/go/LatteCloud/" target="_blank" rel="noopener noreferrer">访问 LatteCloud</a></td>
-                        <td>高性价比 Trojan 机场，支持节点切换</td>
+                        <td data-label="服务名称">LatteCloud</td>
+                        <td data-label="最新优惠码"><code>50off</code> (年付/半年付)</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/LatteCloud/" target="_blank" rel="noopener noreferrer">访问 LatteCloud</a></td>
+                        <td data-label="简要说明">高性价比 Trojan 机场，支持节点切换</td>
                     </tr>
                     <tr>
-                        <td>CoffeeCloud</td>
-                        <td>无</td>
-                        <td><a href="https://pianyivpn.com/go/coffeecloud/" target="_blank" rel="noopener noreferrer">访问 CoffeeCloud</a></td>
-                        <td>节点合理分布，支持 Clash、Surge 等多客户端</td>
+                        <td data-label="服务名称">CoffeeCloud</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/coffeecloud/" target="_blank" rel="noopener noreferrer">访问 CoffeeCloud</a></td>
+                        <td data-label="简要说明">节点合理分布，支持 Clash、Surge 等多客户端</td>
                     </tr>
                     <tr>
-                        <td>红莓网络 CMYNetwork</td>
-                        <td>无</td>
-                        <td><a href="https://pianyivpn.com/go/hongmeiweb/" target="_blank" rel="noopener noreferrer">访问红莓网络</a></td>
-                        <td>支持中转回国节点、适合留学/出海</td>
+                        <td data-label="服务名称">红莓网络 CMYNetwork</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/hongmeiweb/" target="_blank" rel="noopener noreferrer">访问红莓网络</a></td>
+                        <td data-label="简要说明">支持中转回国节点、适合留学/出海</td>
                     </tr>
                     <tr>
-                        <td>Nice Cloud</td>
-                        <td>无</td>
-                        <td><a href="https://pianyivpn.com/go/niceyun/" target="_blank" rel="noopener noreferrer">访问 Nice Cloud</a></td>
-                        <td>支持解锁流媒体与 ChatGPT，企业定制支持</td>
+                        <td data-label="服务名称">Nice Cloud</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/niceyun/" target="_blank" rel="noopener noreferrer">访问 Nice Cloud</a></td>
+                        <td data-label="简要说明">支持解锁流媒体与 ChatGPT，企业定制支持</td>
                     </tr>
                     <tr>
-                        <td>大哥云</td>
-                        <td>无</td>
-                        <td><a href="https://pianyivpn.com/go/dageyun/" target="_blank" rel="noopener noreferrer">访问大哥云</a></td>
-                        <td>多地区高质量节点，性价比佳</td>
+                        <td data-label="服务名称">大哥云</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/dageyun/" target="_blank" rel="noopener noreferrer">访问大哥云</a></td>
+                        <td data-label="简要说明">多地区高质量节点，性价比佳</td>
                     </tr>
                     <tr>
-                        <td>魔戒机场</td>
-                        <td>无</td>
-                        <td><a href="https://pianyivpn.com/go/mojie/" target="_blank" rel="noopener noreferrer">访问魔戒机场</a></td>
-                        <td>支持流量包计费，适合轻度使用者</td>
+                        <td data-label="服务名称">魔戒机场</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/mojie/" target="_blank" rel="noopener noreferrer">访问魔戒机场</a></td>
+                        <td data-label="简要说明">支持流量包计费，适合轻度使用者</td>
                     </tr>
                     <tr>
-                        <td>WgetCloud</td>
-                        <td>无</td>
-                        <td><a href="https://pianyivpn.com/go/WgetCloud/" target="_blank" rel="noopener noreferrer">访问 WgetCloud</a></td>
-                        <td>全球IEPL节点，视频流畅，速度稳定</td>
+                        <td data-label="服务名称">WgetCloud</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/WgetCloud/" target="_blank" rel="noopener noreferrer">访问 WgetCloud</a></td>
+                        <td data-label="简要说明">全球IEPL节点，视频流畅，速度稳定</td>
                     </tr>
                     <tr>
-                        <td>泡泡狗</td>
-                        <td>无</td>
-                        <td><a href="https://pianyivpn.com/go/paopaogou/" target="_blank" rel="noopener noreferrer">访问 泡泡狗</a></td>
-                        <td>IPv6 支持全面，面向科研和外贸</td>
+                        <td data-label="服务名称">泡泡狗</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/paopaogou/" target="_blank" rel="noopener noreferrer">访问 泡泡狗</a></td>
+                        <td data-label="简要说明">IPv6 支持全面，面向科研和外贸</td>
                     </tr>
                     <tr>
-                        <td>MESL</td>
-                        <td>无</td>
-                        <td><a href="https://pianyivpn.com/go/mesl/" target="_blank" rel="noopener noreferrer">访问 MESL</a></td>
-                        <td>集成 VPS + 机场服务，适合技术用户</td>
+                        <td data-label="服务名称">MESL</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/mesl/" target="_blank" rel="noopener noreferrer">访问 MESL</a></td>
+                        <td data-label="简要说明">集成 VPS + 机场服务，适合技术用户</td>
                     </tr>
                     <tr>
-                        <td>闪电猫</td>
-                        <td>无</td>
-                        <td><a href="https://pianyivpn.com/go/speedcat/" target="_blank" rel="noopener noreferrer">访问闪电猫</a></td>
-                        <td>专为手机端优化，节点较快</td>
+                        <td data-label="服务名称">闪电猫</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/speedcat/" target="_blank" rel="noopener noreferrer">访问闪电猫</a></td>
+                        <td data-label="简要说明">专为手机端优化，节点较快</td>
                     </tr>
                     <tr>
-                        <td>SSRDOG</td>
-                        <td>无</td>
-                        <td><a href="https://pianyivpn.com/go/ssrdog/" target="_blank" rel="noopener noreferrer">访问 SSRDOG</a></td>
-                        <td>更新活跃，支持多协议，交流社区强</td>
+                        <td data-label="服务名称">SSRDOG</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/ssrdog/" target="_blank" rel="noopener noreferrer">访问 SSRDOG</a></td>
+                        <td data-label="简要说明">更新活跃，支持多协议，交流社区强</td>
                     </tr>
                      <tr>
-                        <td>肥猫云</td>
-                        <td>无</td>
-                        <td><a href="https://pianyivpn.com/go/fatcat/" target="_blank" rel="noopener noreferrer">访问 肥猫云</a></td>
-                        <td>全部节点为独立专线，游戏/流媒体首选</td>
+                        <td data-label="服务名称">肥猫云</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/fatcat/" target="_blank" rel="noopener noreferrer">访问 肥猫云</a></td>
+                        <td data-label="简要说明">全部节点为独立专线，游戏/流媒体首选</td>
                     </tr>
                 </tbody>
             </table>
