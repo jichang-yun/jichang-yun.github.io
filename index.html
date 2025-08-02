@@ -86,7 +86,7 @@
             width: 100%;
             max-width: 1360px;
             box-sizing: border-box;
-            padding: 10px 15px; /* 更新：减少垂直内边距 */
+            padding: 10px 15px;
         }
         .principles-container {
             display: flex;
@@ -103,6 +103,17 @@
             font-weight: 500;
             color: #495057;
             font-size: 1em;
+            position: relative; /* For pseudo-element positioning */
+        }
+        .principle-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 80%; /* 更新：调整竖线高度 */
+            background-color: #e0e0e0;
         }
         .principle-item svg {
             width: 18px;
@@ -344,6 +355,9 @@
                 flex-direction: column;
                 gap: 10px;
                 align-items: flex-start;
+             }
+             .principle-item:not(:last-child)::after {
+                display: none; /* 移动端隐藏竖线 */
              }
         }
         
