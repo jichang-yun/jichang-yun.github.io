@@ -30,17 +30,18 @@
             height: 90px;
             display: flex;
             align-items: center;
-            justify-content: center;
         }
 
         .header-container {
             width: 100%;
             max-width: 1360px;
             margin: 0 auto;
-            text-align: center;
+            display: flex; /* 更新 */
+            justify-content: space-between; /* 更新 */
+            align-items: center; /* 更新 */
         }
 
-        .site-branding .site-title {
+        .site-title {
             margin: 0;
             font-size: 1.8em;
             color: #2c3e50;
@@ -48,10 +49,11 @@
             padding: 0;
         }
 
-        .site-branding .site-description {
+        .site-description {
             margin: 0;
             font-size: 0.9em;
             color: #777;
+            text-align: right;
         }
         
         /* --- 横幅广告区样式 --- */
@@ -258,7 +260,14 @@
         @media (max-width: 768px) {
              .site-header {
                  height: auto;
-                 padding: 15px;
+                 padding: 15px 20px;
+             }
+             .header-container {
+                flex-direction: column;
+                gap: 5px;
+             }
+             .site-description {
+                text-align: center;
              }
              .banner-ad {
                  height: 60px;
@@ -376,10 +385,8 @@
 
     <header class="site-header">
         <div class="header-container">
-            <div class="site-branding">
-                <h1 class="site-title">机场云</h1>
-                <p class="site-description">机场云专为跨境电商、流媒体（Netflix/Hulu/YouTube/TikTok）、AI（ChatGPT/Gemini）访问提供高性价比机场。</p>
-            </div>
+            <h1 class="site-title">机场云</h1>
+            <p class="site-description">机场云专为跨境电商、流媒体（Netflix/Hulu/YouTube/TikTok）、AI（ChatGPT/Gemini）访问提供高性价比机场。</p>
         </div>
     </header>
 
