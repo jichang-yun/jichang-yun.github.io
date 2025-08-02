@@ -139,7 +139,6 @@
 
         .sidebar-widget ul li a:hover {
             background-color: #f0f2f5;
-            text-decoration: none;
         }
         
         .ad-placeholder {
@@ -163,6 +162,24 @@
             border: none;
             padding-bottom: 0;
             margin-bottom: 0.5em;
+        }
+        
+        /* --- Footer 样式 --- */
+        .site-footer {
+            background-color: #343a40;
+            color: #ccc;
+            text-align: center;
+            padding: 20px 15px;
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+        .site-footer p {
+            margin: 0;
+            color: #ccc;
+        }
+        .site-footer a {
+            color: #fff;
+            text-decoration: underline;
         }
 
         /* --- 响应式设计 --- */
@@ -205,14 +222,11 @@
             color: #555;
         }
         a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+            color: #007bff; /* 颜色保持蓝色 */
+            text-decoration: underline; /* 默认带下划线 */
         }
         strong {
-            color: #d9534f;
+            color: #FF0000; /* 修改为鲜红色 */
         }
         code {
             font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
@@ -265,8 +279,8 @@
     </header>
 
     <div class="banner-ad-section">
-        <div class="banner-ad">横幅广告位 1 (1360x90)</div>
-        <div class="banner-ad">横幅广告位 2 (1360x90)</div>
+        <div class="banner-ad" id="ad-banner-1"></div>
+        <div class="banner-ad" id="ad-banner-2"></div>
     </div>
 
 
@@ -571,11 +585,48 @@
             </div>
             <div class="sidebar-widget">
                 <h4>赞助商</h4>
-                <div class="ad-placeholder">
-                   <span>广告位</span>
-                </div>
+                <div class="ad-placeholder" id="ad-sidebar"></div>
             </div>
         </aside>
     </div>
+
+    <footer class="site-footer">
+        <p>Copyright © 2025 机场云. All Rights Reserved.</p>
+        <p>托管在 <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- 在这里定义您的广告代码 ---
+            const adConfig = {
+                
+                // 横幅广告位 #1 的内容 (可以是Google AdSense代码, 图片链接等HTML)
+                banner1: `<span>横幅广告位 1 (1360x90)</span>`,
+
+                // 横幅广告位 #2 的内容
+                banner2: `<span>横幅广告位 2 (1360x90)</span>`,
+                
+                // 侧边栏广告位的内容
+                sidebar: `<span>侧边栏广告位</span>`
+            };
+
+            // --- 下方的代码负责将广告填充到页面，无需修改 ---
+            const adBanner1 = document.getElementById('ad-banner-1');
+            if (adBanner1) {
+                adBanner1.innerHTML = adConfig.banner1;
+            }
+
+            const adBanner2 = document.getElementById('ad-banner-2');
+            if (adBanner2) {
+                adBanner2.innerHTML = adConfig.banner2;
+            }
+
+            const adSidebar = document.getElementById('ad-sidebar');
+            if (adSidebar) {
+                adSidebar.innerHTML = adConfig.sidebar;
+            }
+        });
+    </script>
+
 </body>
 </html>
