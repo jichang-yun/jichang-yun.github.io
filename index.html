@@ -778,8 +778,8 @@
                 }
             });
 
-            // 获取IP地理位置 - 已修正为HTTPS
-            fetch('https://ip-api.com/json/?fields=status,countryCode')
+            // 获取IP地理位置
+            fetch('http://ip-api.com/json/?fields=status,countryCode')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
