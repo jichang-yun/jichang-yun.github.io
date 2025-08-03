@@ -1,36 +1,38 @@
 # .github/workflows/sitemap-generator.yml
+# 自动生成网站地图 (Sitemap) 的 GitHub Action 工作流
 
-name: Generate Sitemap
+name: Generate Sitemap for jichangyun.com
 
-# 控制 Action 的触发时机
+# 触发条件：在每次向 main 分支推送代码时运行
 on:
   push:
     branches:
-      - main  # 或者你的主分支名，可能是 master
+      - main  # 注意：如果你的主分支是 master，请将此处的 main 修改为 master
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # 第一步：检出你的仓库代码，Action 需要访问你的文件
+      # 步骤 1: 检出（下载）你的仓库代码，以便工作流可以访问它
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 第二步：生成 Sitemap
-      # 这个 Action 会扫描仓库中的 .html 文件并创建 sitemap.xml
+      # 步骤 2: 运行 sitemap 生成器
+      # 它会扫描所有 .html 文件，并以你的自定义域名为基础创建链接
       - name: Generate Sitemap
         uses: cicirello/generate-sitemap@v1
         with:
-          # 【重要】将下面的 URL 替换成你自己的网站域名
-          # 如果是项目主页，格式为 https://<username>.github.io/<repository>
-          # 如果是用户主页或自定义域名，格式为 https://<your-domain.com>
-          base-url: 'https://your-username.github.io/your-repository-name'
+          # 【关键配置】使用你的自定义域名作为网址的基础
+          base-url: 'https://jichangyun.com'
+          # 生成的 sitemap 文件将默认放在仓库根目录，名为 sitemap.xml
 
-      # 第三步：自动提交生成的 sitemap.xml 文件
-      # 如果 sitemap.xml 有变动，这个 Action 会自动将其提交到你的仓库
-      - name: Commit Sitemap
+      # 步骤 3: 自动提交生成的 sitemap.xml 文件
+      # 如果 sitemap.xml 文件内容有变化，此步骤会自动将其提交回你的仓库
+      - name: Commit generated sitemap.xml
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'chore: Auto-generate sitemap.xml'
-          file_pattern: 'sitemap.xml' # 只提交 sitemap.xml 文件
+          commit_message: 'chore: Update sitemap.xml' # 自动提交时使用的消息
+          file_pattern: 'sitemap.xml'                # 只处理 sitemap.xml 文件
+          commit_user_name: 'github-actions[bot]'      # 提交者的用户名
+          commit_user_email: 'github-actions[bot]@users.noreply.github.com' # 提交者的邮箱
