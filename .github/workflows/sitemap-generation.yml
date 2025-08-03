@@ -23,16 +23,14 @@ jobs:
       - name: Generate Sitemap
         uses: cicirello/generate-sitemap@v1
         with:
-          # 【关键配置】使用你的自定义域名作为网址的基础
-          base-url: 'https://jichangyun.com'
-          # 生成的 sitemap 文件将默认放在仓库根目录，名为 sitemap.xml
+          # 【关键修正】使用正确的参数名 base-url-path
+          base-url-path: 'https://jichangyun.com'
 
       # 步骤 3: 自动提交生成的 sitemap.xml 文件
-      # 如果 sitemap.xml 文件内容有变化，此步骤会自动将其提交回你的仓库
       - name: Commit generated sitemap.xml
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'chore: Update sitemap.xml' # 自动提交时使用的消息
-          file_pattern: 'sitemap.xml'                # 只处理 sitemap.xml 文件
-          commit_user_name: 'github-actions[bot]'      # 提交者的用户名
-          commit_user_email: 'github-actions[bot]@users.noreply.github.com' # 提交者的邮箱
+          commit_message: 'chore: Update sitemap.xml'
+          file_pattern: 'sitemap.xml'
+          commit_user_name: 'github-actions[bot]'
+          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
