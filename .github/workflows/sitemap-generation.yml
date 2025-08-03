@@ -1,38 +1,36 @@
-name: Generate sitemap 
+# .github/workflows/sitemap-generator.yml
 
+name: Generate Sitemap
+
+# 控制 Action 的触发时机
 on:
   push:
-    branches: [ main ]
-    paths: [ '**.html' ]
+    branches:
+      - main  # 或者你的主分支名，可能是 master
 
 jobs:
-  sitemap:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout the repo
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0 
-    
-    - name: Generate the sitemap
-      id: sitemap
-      uses: cicirello/generate-sitemap@v1
-      with:
-        base-url-path: https://actions.cicirello.org/
-    
-    - name: Output stats
-      run: |
-        echo "sitemap-path = ${{ steps.sitemap.outputs.sitemap-path }}"
-        echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
-        echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
-    
-    - name: Commit and push
-      run: |
-        if [[ `git status --porcelain sitemap.xml` ]]; then
-          git config --global user.name 'Vincent A. Cicirello'
-          git config --global user.email 'cicirello@users.noreply.github.com'
-          git add sitemap.xml
-          git commit -m "Automated sitemap update" sitemap.xml
-          git push
-        fi
+      # 第一步：检出你的仓库代码，Action 需要访问你的文件
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # 第二步：生成 Sitemap
+      # 这个 Action 会扫描仓库中的 .html 文件并创建 sitemap.xml
+      - name: Generate Sitemap
+        uses: cicirello/generate-sitemap@v1
+        with:
+          # 【重要】将下面的 URL 替换成你自己的网站域名
+          # 如果是项目主页，格式为 https://<username>.github.io/<repository>
+          # 如果是用户主页或自定义域名，格式为 https://<your-domain.com>
+          base-url: 'https://your-username.github.io/your-repository-name'
+
+      # 第三步：自动提交生成的 sitemap.xml 文件
+      # 如果 sitemap.xml 有变动，这个 Action 会自动将其提交到你的仓库
+      - name: Commit Sitemap
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: Auto-generate sitemap.xml'
+          file_pattern: 'sitemap.xml' # 只提交 sitemap.xml 文件
