@@ -1,32 +1,25 @@
 # .github/workflows/sitemap-generator.yml
-# 自动生成网站地图 (Sitemap) 的 GitHub Action 工作流
 
 name: Generate Sitemap for jichangyun.com
 
-# 触发条件：在每次向 main 分支推送代码时运行
 on:
   push:
     branches:
-      - main  # 注意：如果你的主分支是 master，请将此处的 main 修改为 master
+      - main # 如果您的主分支是 master, 请修改此处
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      # 步骤 1: 检出（下载）你的仓库代码，以便工作流可以访问它
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 步骤 2: 运行 sitemap 生成器
-      # 它会扫描所有 .html 文件，并以你的自定义域名为基础创建链接
       - name: Generate Sitemap
         uses: cicirello/generate-sitemap@v1
         with:
           # 【关键修正】使用正确的参数名 base-url-path
           base-url-path: 'https://jichangyun.com'
 
-      # 步骤 3: 自动提交生成的 sitemap.xml 文件
       - name: Commit generated sitemap.xml
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
