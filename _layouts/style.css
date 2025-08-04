@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <!-- 您所有的 meta, title, link 标签都在这里 -->
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
     <!-- 您所有的 SEO script 标签都在这里 -->
 </head>
 <body>
