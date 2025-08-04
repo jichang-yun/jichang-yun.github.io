@@ -1,7 +1,8 @@
 # 网站基本信息
 title: 机场云
 description: "专为跨境电商、流媒体、AI访问提供高性价比机场"
-url: "https://jichangyun.com"
+url: "https://jichangyun.com"  # 确保这里是您的自定义域名
 
 # Jekyll 构建设置
 permalink: pretty
+baseurl: "" # 您的网站在根目录，所以这里保持为空
