@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 您所有的 meta, title, link 标签都在这里 -->
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    <!-- 您所有的 SEO script 标签都在这里 -->
+</head>
+<body>
+
+    {{ content }} <!-- 所有页面的具体内容将在这里插入 -->
+
+    <!-- === Footer区域 === -->
+    <footer class="site-footer">
+        <!-- ... 您的页脚完整代码 ... -->
+    </footer>
+
+    <!-- === 第三方代码管理中心 === -->
+    <script>
+        // ... 您的广告和统计脚本 ...
+    </script>
+
+    <!-- === 访客提示弹窗脚本 === -->
+    <script>
+        // ... 您的弹窗脚本 ...
+    </script>
+
+</body>
+</html>
