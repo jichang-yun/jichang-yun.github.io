@@ -1,0 +1,46 @@
+---
+id: 104693
+title: 2024年高速稳定全IPLC专线便宜v2ray机场推荐：Gatern
+date: '2024-12-20T21:24:22+08:00'
+author: jichanghui
+excerpt: 'Gatern是一家高性价比便宜 ssr/v2ray 机场，正常运营三年。全节点提供 IPLC 专线，线路稳定，观看油管、奈飞等流媒体，晚高峰油管测速轻松10万+；提供非常多的小众国家线路。Gatern 不限制同时在线设备数量，只要套餐流量充足，随便用就可以了。'
+layout: revision
+guid: 'https://jichanghui.com/?p=104693'
+permalink: '/?p=104693'
+---
+
+**<span style="color: #000000;">购买之前，请知晓机场有跑路风险，请一定月付，如果发生问题请自行负责。介绍机场是为追剧国外流媒体、tiktok运营、外贸跨境等非政治用途。请遵守中国相关法律，网络非法外之地，在网外做到不发言不评论不猎奇不信谣，思想极端或者政治猎奇的不要购买。</span>**
+
+Gatern 原名Shuttle、班机机场是一家主打高性价比的便宜 v2ray 机场，Gatern 机场节点多，线路高速稳定并且全节点提供 IPLC 专线，采用 Xray 内核的 Vmess 协议，双线路负载。目前已经正常运营四年多了。机场主在海外大厂，兼职做出国留学服务，Gatern 机场算是衍生业务，方便国内留学的朋友浏览国外大学相关信息。Gatern 全节点提供纯 IPLC 专线，经过最近一段时间的试用，线路非常稳定，速度给力，观看 Youtube 油管、NetFlix 奈非奈飞网飞等国外流媒体，晚高峰油管测速可以轻松10万+。 Gatern 提供非常多的小众国家线路，比如巴基斯坦、以色列、阿联酋和菲律宾等，有小众线路需求的用户可以考虑一下。IPLC 专线不过 GFW，不会被封锁，在特殊时期也非常稳定。Gatern 不限制同时在线设备数量，只要套餐流量充足，随便用就可以了。 ## Gatern 机场官网
+
+**<span style="font-size: 18px;">[Gatern 机场官网](https://affvps.com/gatern)[最新网址](https://affvps.com/gatern)</span>**
+
+## Gatern 机场怎么样？
+
+- 提供 Surge 4/Quantumult X/Clash/Shadowrocket/Loon 等超多客户端节点订阅支持。
+- 全线 IPLC 线路，常规节点均没有倍率，个别小众节点，如巴基斯坦、以色列等地区会有多倍率。
+- 除了用户集中的香港有三台服务器节点，其他地区先均有一到两台服务器节点，速度上经过测试绝对满足需求。商家会经常根据节点使用负载考虑扩容节点，不用担心卡顿问题。
+- 地区上，除香港外的地区有，台湾、日本、韩国、新加坡、印度、菲律宾、巴基斯坦、以色列、阿联酋、美国、加拿大、阿根廷、巴西、英国、法国、德国、意大利、荷兰、瑞典、俄罗斯、土耳其、波兰、丹麦、立陶宛、拉脱维亚、瑞士、罗马尼亚、澳大利亚、新西兰、埃及、南非，后续可能会有调整
+
+## Gatern 便宜 v2ray机场优惠码
+
+优惠代码1：9NBC1HH0FF。75折一次性优惠 适用范围：年付及以上产品 优惠代码2：W4M38Z6BRM。85折一次性优惠 适用范围：月付、季度付、半年付及流量包产品 优惠代码3：充值获取赠金；充100到账110；充200到账230；充300到账350；充500到账600；充1000到账1200。 ## Gatern 机场套餐
+
+套餐间线路没有区别，均为 IPLC 专线中转，请按需选购。按季度、年度等购买套餐有更多优惠哦。 订阅服务 | 套餐 | 流量 | 价格 |
+|---|---|---|
+| Nano | 120G / 月 | [20 元 / 月](https://affvps.com/gatern) |
+| Micro | 216G / 月 | [36 元 / 月](https://affvps.com/gatern) |
+| Small | 312G / 月 | [52 元 / 月](https://affvps.com/gatern) |
+| Medium | 600G / 月 | [100 元 / 月](https://affvps.com/gatern) |
+| Large | 984G / 月 | [164 元 / 月](https://affvps.com/gatern) |
+
+不限时流量包 | 套餐 | 流量 | 价格 |
+|---|---|---|
+| Special | 144G | [80 元](https://affvps.com/gatern) |
+| Lite | 306G | [170 元](https://affvps.com/gatern) |
+| Pro | 630G | [350 元](https://affvps.com/gatern) |
+| Ultra | 1278G | [710 元](https://affvps.com/gatern) |
+
+## Gatern 机场线路评测，gatern机场速度如何？
+
+![80fc5b94b7f08aa](https://affvps.com/wp-content/uploads/2022/06/80fc5b94b7f08aa.jpg "80fc5b94b7f08aa")
