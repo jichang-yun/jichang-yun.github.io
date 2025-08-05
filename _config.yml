@@ -2,7 +2,7 @@
 title: 机场云
 description: "专为跨境电商、流媒体、AI访问提供高性价比机场"
 url: "https://jichangyun.com"
-baseurl: "" # 您的网站在根域名，所以这里保持为空
+baseurl: ""
 
 # Jekyll 构建设置
 permalink: pretty
