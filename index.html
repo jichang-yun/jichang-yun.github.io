@@ -1,288 +1,928 @@
----
-layout: default
-title: 机场云 - 2025年稳定好用的机场推荐
-description: 机场云专为跨境电商、流媒体（Netflix/Hulu/YouTube/TikTok）、AI（ChatGPT/Gemini）访问提供高性价比机场。
----
-
-<!-- === 访客提示弹窗HTML结构 === -->
-<div id="visitor-warning-modal" class="modal-overlay">
-    <div class="modal-content">
-        <h3>访问提示</h3>
-        <p>中国大陆访客请谨慎访问本站，<br>请安全合规上网。</p>
-        <button id="modal-close-button" class="modal-close-btn">我已知晓</button>
-    </div>
-</div>
-
-<!-- === Header区域 === -->
-<header class="site-header">
-    <div class="header-container">
-        <p class="site-title">
-            <a href="https://jichangyun.com/">
-                <svg class="site-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
-                    <ellipse cx="12" cy="12" rx="8" ry="4" transform="rotate(-30 12 12)"/>
-                </svg>
-                <span>机场云</span>
-            </a>
-        </p>
-        <p class="site-description">专为跨境电商、流媒体、AI访问提供高性价比机场</p>
-    </div>
-</header>
-
-<!-- === 横幅广告与核心要点区域 === -->
-<div class="banner-ad-section">
-    <div class="banner-ad" id="ad-banner-1"></div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>机场云 - 2025年稳定好用的机场推荐</title>
     
-    <section class="core-principles-section">
-        <div class="principles-container">
-            <div class="principle-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                <span>遵守国内法律</span>
+    <link rel="icon" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23007bff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z'%3e%3c/path%3e%3c/svg%3e">
+
+    <meta name="description" content="机场云专为跨境电商、流媒体（Netflix/Hulu/YouTube/TikTok）、AI（ChatGPT/Gemini）访问提供高性价比机场。">
+    <meta name="keywords" content="机场云, 机场推荐, 稳定机场, 2025, SS, V2Ray, Trojan, VLESS, Hysteria2, Clash, Shadowrocket, 小火箭, Quantumult X, Netflix, ChatGPT, 跨境电商, 流媒体解锁, 科学上网, 梯子, 节点">
+    
+    <link rel="canonical" href="https://jichangyun.com/" />
+
+    <meta name="baiduspider" content="noindex, nofollow">
+
+    <style>
+        /* --- 1. 基础与全局样式 (Base & Global Styles) --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.7;
+            color: #333;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+
+        .content .main-title { 
+            font-size: 2em; 
+        } 
+        .content .main-title,
+        .content .main-title + h2 {
+            text-align: center;
+        }
+        h2 { font-size: 1.5em; }
+        h3 { font-size: 1.25em; }
+        h4 { font-size: 1.1em; }
+
+        p, li {
+            font-size: 16px;
+            color: #555;
+            letter-spacing: 0.5px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        strong {
+            color: #FF0000;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            background-color: #f1f1f1;
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            border-radius: 0;
+        }
+
+        hr {
+            height: 0.25em;
+            padding: 0;
+            margin: 24px 0;
+            background-color: #e1e4e8;
+            border: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+        th, td {
+            border: 1px solid #dfe2e5;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        thead {
+            background-color: #f6f8fa;
+        }
+        thead th {
+            font-weight: 600;
+        }
+        ol li {
+            margin-bottom: 0.5em;
+        }
+
+        /* --- 2. 页面布局结构 (Layout Structure) --- */
+        .site-header {
+            background-color: #fff;
+            padding: 0 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            height: 90px;
+            display: flex;
+            align-items: center;
+        }
+        .header-container {
+            width: 100%;
+            max-width: 1360px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            max-width: 1360px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .content {
+            flex: 1; 
+            min-width: 0; 
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 0;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        }
+
+        .sidebar {
+            flex-basis: 250px;
+            flex-shrink: 0;
+            position: sticky; 
+            top: 20px;
+        }
+
+        .site-footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+
+        /* --- 3. 组件样式 (Component Styles) --- */
+
+        /* 3.1 页眉 Header */
+        .site-title {
+            margin: 0;
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            border: none;
+            padding: 0;
+        }
+        .site-title a {
+            color: inherit;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .site-logo {
+            height: 1.2em;
+            width: auto;
+            stroke-width: 1.5;
+            stroke: #007bff;
+            fill: none;
+        }
+        .site-description {
+            margin: 0;
+            font-size: 0.9em;
+            color: #777;
+            text-align: right;
+        }
+
+        /* 3.2 广告与核心要点区 */
+        .banner-ad-section {
+            padding: 15px 0;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .banner-ad {
+            width: 100%;
+            max-width: 1360px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ccc;
+            background-color: #f9f9f9;
+            color: #aaa;
+            font-size: 1.2em;
+            box-sizing: border-box;
+            padding: 0 15px;
+        }
+        .core-principles-section {
+            width: 100%;
+            max-width: 1360px;
+            box-sizing: border-box;
+            padding: 10px 15px;
+        }
+        .principles-container {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            gap: 20px;
+            background-color: #fff;
+            padding: 25px 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            border-radius: 0;
+        }
+        .principle-item {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 1.05em;
+            position: relative;
+        }
+        .principle-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 60%;
+            background-color: #e9ecef;
+        }
+        .principle-item svg {
+            width: 20px;
+            height: 20px;
+            fill: #28a745;
+        }
+
+        /* 3.3 主导航栏 */
+        .main-navigation-bar {
+            background-color: #343a40;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: flex-start;
+        }
+        .main-navigation-bar ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 5px;
+        }
+        .main-navigation-bar a {
+            display: flex;
+            align-items: center;
+            padding: 15px 25px;
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 0;
+            transition: background-color 0.2s ease;
+        }
+        .main-navigation-bar a:hover {
+            background-color: #495057;
+            text-decoration: none;
+        }
+        .hot-tag {
+            background-color: #FF0000;
+            color: #fff;
+            font-size: 0.7em;
+            padding: 2px 6px;
+            border-radius: 0;
+            margin-left: 8px;
+            font-weight: bold;
+            line-height: 1;
+        }
+        
+        /* 3.4 文章推荐模块 */
+        .article-showcase-section {
+            max-width: 1360px;
+            margin: 20px auto 0 auto;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+        .article-showcase-container {
+            display: flex;
+            gap: 20px;
+        }
+        .article-column {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        }
+        .article-column h4 {
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+        .article-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .article-column li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f2f5;
+        }
+        .article-column li:last-child {
+            border-bottom: none;
+        }
+        .article-column a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.2s ease;
+        }
+        .article-column a:hover {
+            color: #007bff;
+        }
+
+        /* 3.5 侧边栏 */
+        .sidebar-widget {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 0;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        }
+        .sidebar-widget h4 {
+            margin-top: 0;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 10px;
+        }
+        .sidebar-widget ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .sidebar-widget ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar-widget ul li a {
+            display: block;
+            padding: 5px;
+            border-radius: 0;
+            transition: background-color 0.2s ease;
+        }
+        .sidebar-widget ul li a:hover {
+            background-color: #f0f2f5;
+        }
+        .ad-placeholder {
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ccc;
+            border-radius: 0;
+            background-color: #f9f9f9;
+            text-align: center;
+            color: #aaa;
+            font-size: 1.2em;
+        }
+
+        /* 3.6 FAQ 模块 */
+        .faq-item {
+            margin-bottom: 1.5em;
+        }
+        .faq-item h4 {
+            border: none;
+            padding-bottom: 0;
+            margin-bottom: 0.5em;
+        }
+
+        /* 3.7 页脚 Footer */
+        .site-footer p {
+            margin: 0 0 10px 0;
+            color: #fff;
+        }
+        .site-footer .footer-credits,
+        .site-footer .footer-hosting {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 5px 10px;
+        }
+        .site-footer a {
+            color: #fff;
+            text-decoration: underline;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .site-footer svg {
+            height: 1.2em;
+            width: auto;
+            fill: currentColor;
+        }
+
+        /* 3.8 弹窗提示 Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 30px;
+            border-radius: 0;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .modal-content h3 {
+             margin-top: 0;
+             color: #d9534f;
+        }
+        .modal-close-btn {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 0;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .modal-close-btn:hover {
+            background: #0056b3;
+        }
+
+        /* --- 4. 响应式设计 (Responsive Design) --- */
+        @media (max-width: 1390px) {
+            .main-navigation-bar {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .main-container {
+                flex-direction: column; 
+            }
+            .sidebar {
+                flex-basis: 100%; 
+                width: 100%;
+                position: static;
+            }
+             .site-header {
+                 height: auto;
+                 padding: 15px 20px;
+             }
+             .header-container {
+                flex-direction: column;
+                gap: 5px;
+             }
+             .site-description {
+                text-align: center;
+             }
+             .principles-container {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+                padding: 20px;
+             }
+             .principle-item:not(:last-child)::after {
+                display: none;
+             }
+             .article-showcase-container {
+                flex-direction: column;
+             }
+        }
+        
+        @media (max-width: 768px) {
+             .banner-ad {
+                 height: 60px;
+                 font-size: 1em;
+             }
+             .main-navigation-bar ul {
+                flex-direction: column;
+                width: 100%;
+                padding: 10px 0;
+             }
+             .main-navigation-bar a {
+                text-align: center;
+                justify-content: center;
+                padding: 12px;
+             }
+             
+            /* --- 表格自适应样式 --- */
+            table {
+                border: 0;
+            }
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+            table tr {
+                display: block;
+                margin-bottom: 1.5em;
+                border-bottom: 3px solid #007bff;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            }
+            table td {
+                display: block;
+                text-align: right;
+                border-bottom: 1px dotted #ccc;
+                font-size: 15px;
+            }
+            table td::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+                color: #2c3e50;
+            }
+            table td:last-child {
+                border-bottom: 0;
+            }
+        }
+    </style>
+    
+    <!-- SEO 优化：添加 JSON-LD 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "机场云",
+      "url": "https://jichangyun.com/"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "什么是机场？和VPN有什么区别？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "简单来说，“机场”是提供代理服务的社区化名称，它使用SS/Trojan/VLESS等特定协议。与传统VPN相比，机场的流量特征更难被识别，抗封锁能力更强，且通常提供更灵活的路由规则（如国内网站直连，国外网站代理），使用体验更智能。"
+        }
+      },{
+        "@type": "Question",
+        "name": "什么是订阅链接？如何使用？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "订阅链接是一个包含了所有服务器节点信息的URL。您无需手动一个个配置节点，只需将这个链接复制到Clash、Shadowrocket等客户端中，客户端会自动拉取并更新所有节点信息，非常方便。"
+        }
+      },{
+        "@type": "Question",
+        "name": "Clash, Shadowrocket, V2RayN 这些软件是什么关系？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "它们都是代理客户端软件，是使用机场服务的“遥控器”。Clash 是目前Windows/macOS/Android上功能最强大、最主流的客户端。Shadowrocket (小火箭)是iOS平台上最受欢迎的客户端。V2RayN是Windows平台一个老牌且功能丰富的客户端。"
+        }
+      },{
+        "@type": "Question",
+        "name": "为什么我的机场突然不能用了？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可能的原因有很多，您可以按以下步骤排查：1. 在客户端内手动更新一次订阅链接，看是否恢复。2. 检查机场官网能否打开，看是否有维护公告。3. 尝试切换不同的节点，可能只是个别节点出现故障。4. 检查本地网络环境，或重启路由器和电脑。"
+        }
+      },{
+        "@type": "Question",
+        "name": "线路速度慢怎么办？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "速度慢受多种因素影响：本地带宽、高峰时段、节点选择、客户端设置。晚高峰（晚上8点-11点）国际出口拥堵，速度下降是正常现象，专线（IEPL）会好很多。尝试切换到负载较低或物理距离更近的节点（如香港、日本、新加坡）。"
+        }
+      },{
+        "@type": "Question",
+        "name": "我需要购买最贵的套餐吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "完全没必要。请根据您的实际需求选择。对于大多数日常查资料、看视频的用户，入门或中档套餐的流量和速率已经完全足够。只有对稳定性和延迟有极高要求的专业用户（如跨境电商、游戏玩家）才需要考虑更高等级的专线套餐。"
+        }
+      },{
+        "@type": "Question",
+        "name": "我人在国外，可以用来访问国内的网站/App吗？（回国模式）",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "这取决于您选择的机场服务。大部分机场主要提供“出海”服务，但一些特定的服务商也会提供“回国线路”。这些线路的服务器位于中国大陆，专门用于帮助海外华人访问有地区限制的国内服务。在购买前，请务必查看服务商的节点列表或特色说明，确认其是否明确支持“回国”功能。"
+        }
+      }]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- === 访客提示弹窗HTML结构 === -->
+    <div id="visitor-warning-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>访问提示</h3>
+            <p>中国大陆访客请谨慎访问本站，<br>请安全合规上网。</p>
+            <button id="modal-close-button" class="modal-close-btn">我已知晓</button>
+        </div>
+    </div>
+
+
+    <!-- === Header区域 === -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- SEO 优化：将h1改为p，并用CSS模拟样式 -->
+            <p class="site-title">
+                <a href="https://jichangyun.com/">
+                    <svg class="site-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+                        <ellipse cx="12" cy="12" rx="8" ry="4" transform="rotate(-30 12 12)"/>
+                    </svg>
+                    <span>机场云</span>
+                </a>
+            </p>
+            <p class="site-description">专为跨境电商、流媒体、AI访问提供高性价比机场</p>
+        </div>
+    </header>
+
+    <!-- === 横幅广告与核心要点区域 === -->
+    <div class="banner-ad-section">
+        <div class="banner-ad" id="ad-banner-1"></div>
+        
+        <section class="core-principles-section">
+            <div class="principles-container">
+                <div class="principle-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span>遵守国内法律</span>
+                </div>
+                <div class="principle-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span>安全合规上网</span>
+                </div>
+                <div class="principle-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span>优先月付季付</span>
+                </div>
             </div>
-            <div class="principle-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                <span>安全合规上网</span>
+        </section>
+
+        <div class="banner-ad" id="ad-banner-2"></div>
+    </div>
+
+    <!-- === 主导航栏 === -->
+    <nav class="main-navigation-bar">
+        <div class="nav-container">
+             <ul>
+                <li><a href="https://jichangyun.com/">主页</a></li>
+                <li><a href="#">流媒体合租平台 <span class="hot-tag">hot</span></a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- === 文章推荐模块 === -->
+    <section class="article-showcase-section">
+        <div class="article-showcase-container">
+            <div class="article-column">
+                <h4>最新文章</h4>
+                <ul id="latest-articles-list"></ul>
             </div>
-            <div class="principle-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                <span>优先月付季付</span>
+            <div class="article-column">
+                <h4>最热文章</h4>
+                <ul id="hottest-articles-list"></ul>
+            </div>
+            <div class="article-column">
+                <h4>随机文章</h4>
+                <ul id="random-articles-list"></ul>
             </div>
         </div>
     </section>
 
-    <div class="banner-ad" id="ad-banner-2"></div>
-</div>
+    <div class="main-container">
+        <!-- === 主内容区 === -->
+        <main class="content">
+            <h1 class="main-title">2025 最佳机场推荐与评测</h1>
+            <h2>稳定高速，解锁 Netflix、TikTok、ChatGPT，跨境电商必备</h2>
 
-<!-- === 主导航栏 === -->
-<nav class="main-navigation-bar">
-    <div class="nav-container">
-         <ul>
-            <li><a href="https://jichangyun.com/">主页</a></li>
-            <li><a href="#">流媒体合租平台 <span class="hot-tag">hot</span></a></li>
-        </ul>
-    </div>
-</nav>
+            <p>旨在推荐一些经过市场检验、稳定可靠、高性价比的机场服务，并会根据网络环境变化进行不定期更新。所有推荐的服务均支持 Clash (Clash Verge/Meta)、Shadowrocket (小火箭)、Quantumult X (圈X)、V2RayN、sing-box 等主流订阅客户端。</p>
 
-<div class="main-container">
-    <!-- === 主内容区 === -->
-    <main class="content">
-        <h1 class="main-title">2025 最佳机场推荐与评测</h1>
-        <h2>稳定高速，解锁 Netflix、TikTok、ChatGPT，跨境电商必备</h2>
+            <h3 id="principles">核心原则与避坑指南</h3>
+            <ol>
+                <li><strong>稳定压倒一切</strong>：在选择机场服务时，<strong>稳定性永远是第一要素</strong>。对于跨境电商、远程办公和视频会议等场景，线路的持续可用性远比峰值速度更重要。</li>
+                <li><strong>月付/季付是王道</strong>：机场行业变动频繁，服务商因网络环境变化更换域名是常态，但这不代表不会跑路。<strong>强烈建议月付或季付</strong>，切勿因贪图年付折扣而被套牢。用户的权益需要自己保障。</li>
+                <li><strong>安全上网须知</strong>：请遵守您所在地区以及服务器所在地区的法律法规。在境外网络环境中，外网非法外之地，做到不造谣、不传谣、不参与敏感政治话题。</li>
+            </ol>
 
-        <p>旨在推荐一些经过市场检验、稳定可靠、高性价比的机场服务，并会根据网络环境变化进行不定期更新。所有推荐的服务均支持 Clash (Clash Verge/Meta)、Shadowrocket (小火箭)、Quantumult X (圈X)、V2RayN、sing-box 等主流订阅客户端。</p>
+            <hr>
 
-        <h3 id="principles">核心原则与避坑指南</h3>
-        <ol>
-            <li><strong>稳定压倒一切</strong>：在选择机场服务时，<strong>稳定性永远是第一要素</strong>。对于跨境电商、远程办公和视频会议等场景，线路的持续可用性远比峰值速度更重要。</li>
-            <li><strong>月付/季付是王道</strong>：机场行业变动频繁，服务商因网络环境变化更换域名是常态，但这不代表不会跑路。<strong>强烈建议月付或季付</strong>，切勿因贪图年付折扣而被套牢。用户的权益需要自己保障。</li>
-            <li><strong>安全上网须知</strong>：请遵守您所在地区以及服务器所在地区的法律法规。在境外网络环境中，外网非法外之地，做到不造谣、不传谣、不参与敏感政治话题。</li>
-        </ol>
+            <h3 id="how-to-choose">如何选择适合自己的机场？</h3>
+            <h4>1. 根据需求选择</h4>
+            <ul>
+                <li><strong>跨境电商/远程办公</strong>：稳定性是生命线。</li>
+                <li><strong>流媒体/游戏/AI</strong>：需要大带宽、低延迟和优秀的流媒体解锁能力。</li>
+                <li><strong>轻度使用/备用</strong>：偶尔查资料、用一下Google。</li>
+            </ul>
 
-        <hr>
+            <h4>2. 了解线路类型（科普）</h4>
+            <ul>
+                <li><strong>IEPL/IPLC 专线</strong>：企业级的国际专线，不经过公网防火墙（GFW），是目前稳定性最高、延迟最低的线路，当然价格也最贵。</li>
+                <li><strong>BGP/公网中转</strong>：数据通过国内服务器进行一次中转，再连接到海外落地节点。这是目前主流机场的通用方案，能够有效抵抗干扰，在速度和成本之间取得了良好平衡。</li>
+            </ul>
 
-        <h3 id="how-to-choose">如何选择适合自己的机场？</h3>
-        <h4>1. 根据需求选择</h4>
-        <ul>
-            <li><strong>跨境电商/远程办公</strong>：稳定性是生命线。</li>
-            <li><strong>流媒体/游戏/AI</strong>：需要大带宽、低延迟和优秀的流媒体解锁能力。</li>
-            <li><strong>轻度使用/备用</strong>：偶尔查资料、用一下Google。</li>
-        </ul>
+            <hr>
 
-        <h4>2. 了解线路类型（科普）</h4>
-        <ul>
-            <li><strong>IEPL/IPLC 专线</strong>：企业级的国际专线，不经过公网防火墙（GFW），是目前稳定性最高、延迟最低的线路，当然价格也最贵。</li>
-            <li><strong>BGP/公网中转</strong>：数据通过国内服务器进行一次中转，再连接到海外落地节点。这是目前主流机场的通用方案，能够有效抵抗干扰，在速度和成本之间取得了良好平衡。</li>
-        </ul>
+            <h3 id="protocols">各主流机场协议简明对比表</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>协议名称</th>
+                        <th>核心思想</th>
+                        <th>主要优点</th>
+                        <th>主要缺点</th>
+                        <th>当前地位</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="协议名称"><strong>Shadowsocks (SS)</strong></td>
+                        <td data-label="核心思想">轻量级加密代理</td>
+                        <td data-label="主要优点">速度快，资源消耗极低</td>
+                        <td data-label="主要缺点">流量特征明显，易被识别和封锁</td>
+                        <td data-label="当前地位">已过时，基本被淘汰</td>
+                    </tr>
+                    <tr>
+                        <td data-label="协议名称"><strong>V2Ray (VMess)</strong></td>
+                        <td data-label="核心思想">模块化，深度伪装流量</td>
+                        <td data-label="主要优点">功能强大，伪装方式多，抗封锁能力强</td>
+                        <td data-label="主要缺点">配置复杂，性能开销相对较大</td>
+                        <td data-label="当前地位">仍在使用，但正被VLESS替代</td>
+                    </tr>
+                    <tr>
+                        <td data-label="协议名称"><strong>Trojan</strong></td>
+                        <td data-label="核心思想">模仿HTTPS流量，做到极致伪装</td>
+                        <td data-label="主要优点">安全性极高，性能好，不易被主动探测</td>
+                        <td data-label="主要缺点">必须使用域名和TLS证书</td>
+                        <td data-label="当前地位"><strong>主流协议</strong>，稳定可靠</td>
+                    </tr>
+                    <tr>
+                        <td data-label="协议名称"><strong>VLESS</strong></td>
+                        <td data-label="核心思想">精简版VMess，专注性能</td>
+                        <td data-label="主要优点">性能卓越，延迟低，结合TLS后安全性高</td>
+                        <td data-label="主要缺点">自身不加密，安全性完全依赖外层TLS</td>
+                        <td data-label="当前地位"><strong>主流协议</strong>，高端机场首选</td>
+                    </tr>
+                    <tr>
+                        <td data-label="协议名称"><strong>Hysteria / Hysteria2</strong></td>
+                        <td data-label="核心思想">暴力发包，榨干带宽</td>
+                        <td data-label="主要优点">恶劣网络下（晚高峰）速度极快</td>
+                        <td data-label="主要缺点">流量特征(QUIC)可能被针对，消耗资源</td>
+                        <td data-label="当前地位"><strong>新兴力量</strong>，作为高速专项协议</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <hr>
 
-        <hr>
+            <h3 id="premium-airports">精选高端机场</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>服务名称</th>
+                        <th>最新优惠码</th>
+                        <th>机场链接</th>
+                        <th>简要说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="服务名称">&nbsp;</td>
+                        <td data-label="最新优惠码">&nbsp;</td>
+                        <td data-label="机场链接">&nbsp;</td>
+                        <td data-label="简要说明">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td data-label="服务名称">&nbsp;</td>
+                        <td data-label="最新优惠码">&nbsp;</td>
+                        <td data-label="机场链接">&nbsp;</td>
+                        <td data-label="简要说明">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td data-label="服务名称">&nbsp;</td>
+                        <td data-label="最新优惠码">&nbsp;</td>
+                        <td data-label="机场链接">&nbsp;</td>
+                        <td data-label="简要说明">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <h3 id="protocols">各主流机场协议简明对比表</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>协议名称</th>
-                    <th>核心思想</th>
-                    <th>主要优点</th>
-                    <th>主要缺点</th>
-                    <th>当前地位</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td data-label="协议名称"><strong>Shadowsocks (SS)</strong></td>
-                    <td data-label="核心思想">轻量级加密代理</td>
-                    <td data-label="主要优点">速度快，资源消耗极低</td>
-                    <td data-label="主要缺点">流量特征明显，易被识别和封锁</td>
-                    <td data-label="当前地位">已过时，基本被淘汰</td>
-                </tr>
-                <tr>
-                    <td data-label="协议名称"><strong>V2Ray (VMess)</strong></td>
-                    <td data-label="核心思想">模块化，深度伪装流量</td>
-                    <td data-label="主要优点">功能强大，伪装方式多，抗封锁能力强</td>
-                    <td data-label="主要缺点">配置复杂，性能开销相对较大</td>
-                    <td data-label="当前地位">仍在使用，但正被VLESS替代</td>
-                </tr>
-                <tr>
-                    <td data-label="协议名称"><strong>Trojan</strong></td>
-                    <td data-label="核心思想">模仿HTTPS流量，做到极致伪装</td>
-                    <td data-label="主要优点">安全性极高，性能好，不易被主动探测</td>
-                    <td data-label="主要缺点">必须使用域名和TLS证书</td>
-                    <td data-label="当前地位"><strong>主流协议</strong>，稳定可靠</td>
-                </tr>
-                <tr>
-                    <td data-label="协议名称"><strong>VLESS</strong></td>
-                    <td data-label="核心思想">精简版VMess，专注性能</td>
-                    <td data-label="主要优点">性能卓越，延迟低，结合TLS后安全性高</td>
-                    <td data-label="主要缺点">自身不加密，安全性完全依赖外层TLS</td>
-                    <td data-label="当前地位"><strong>主流协议</strong>，高端机场首选</td>
-                </tr>
-                <tr>
-                    <td data-label="协议名称"><strong>Hysteria / Hysteria2</strong></td>
-                    <td data-label="核心思想">暴力发包，榨干带宽</td>
-                    <td data-label="主要优点">恶劣网络下（晚高峰）速度极快</td>
-                    <td data-label="主要缺点">流量特征(QUIC)可能被针对，消耗资源</td>
-                    <td data-label="当前地位"><strong>新兴力量</strong>，作为高速专项协议</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <hr>
+            <hr>
 
-        <h3 id="premium-airports">精选高端机场</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>服务名称</th>
-                    <th>最新优惠码</th>
-                    <th>机场链接</th>
-                    <th>简要说明</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td data-label="服务名称">&nbsp;</td>
-                    <td data-label="最新优惠码">&nbsp;</td>
-                    <td data-label="机场链接">&nbsp;</td>
-                    <td data-label="简要说明">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td data-label="服务名称">&nbsp;</td>
-                    <td data-label="最新优惠码">&nbsp;</td>
-                    <td data-label="机场链接">&nbsp;</td>
-                    <td data-label="简要说明">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td data-label="服务名称">&nbsp;</td>
-                    <td data-label="最新优惠码">&nbsp;</td>
-                    <td data-label="机场链接">&nbsp;</td>
-                    <td data-label="简要说明">&nbsp;</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <hr>
-
-        <h3 id="recommendations">性价比便宜机场</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>服务名称</th>
-                    <th>最新优惠码</th>
-                    <th>机场链接</th>
-                    <th>简要说明</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td data-label="服务名称">Gatern</td>
-                    <td data-label="最新优惠码"><code>65ZGFN29XB</code> (年付75折) <br> <code>OVP56BZ8E8</code> (其他85折)</td>
-                    <td data-label="机场链接"><a href="https://pianyivpn.com/go/gatern/" target="_blank" rel="noopener noreferrer">访问 Gatern</a></td>
-                    <td data-label="简要说明">IPLC 专线，全节点高性价比，支持小众国家线路</td>
-                </tr>
-                <tr>
-                    <td data-label="服务名称">飞鸟机场</td>
-                    <td data-label="最新优惠码">无</td>
-                    <td data-label="机场链接"><a href="https://pianyivpn.com/go/flyingbird/" target="_blank" rel="noopener noreferrer">访问飞鸟机场</a></td>
-                    <td data-label="简要说明">纯IEPL中转，速度稳定，适合视频流畅观看</td>
-                </tr>
-                <tr>
-                    <td data-label="服务名称">Totoro Cloud</td>
-                    <td data-label="最新优惠码">无</td>
-                    <td data-label="机场链接"><a href="https://pianyivpn.com/go/totoro/" target="_blank" rel="noopener noreferrer">访问 Totoro Cloud</a></td>
-                    <td data-label="简要说明">Trojan 协议为主，支持 GPT、流媒体</td>
-                </tr>
-                <tr>
-                    <td data-label="服务名称">觅云 MeCloud</td>
-                    <td data-label="最新优惠码">新用户有 9.9 元试用</td>
-                    <td data-label="机场链接"><a href="https://pianyivpn.com/go/mecloud/" target="_blank" rel="noopener noreferrer">访问觅云</a></td>
-                    <td data-label="简要说明">独服 IPLC+BGP，三年稳定运营，支持流媒体解锁</td>
-                </tr>
-                <tr>
-                    <td data-label="服务名称">Just My Socks</td>
-                    <td data-label="最新优惠码"><code>JMS9272283</code> (循环9.48折)</td>
-                    <td data-label="机场链接"><a href="https://pianyivpn.com/go/jms/" target="_blank" rel="noopener noreferrer">访问 Just My Socks</a></td>
-                    <td data-label="简要说明">搬瓦工官方机场，CN2 GIA 线路，不怕跑路</td>
-                </tr>
-                <tr>
-                    <td data-label="服务名称">LatteCloud</td>
-                    <td data-label="最新优惠码"><code>50off</code> (年付/半年付)</td>
-                    <td data-label="机场链接"><a href="https://pianyivpn.com/go/LatteCloud/" target="_blank" rel="noopener noreferrer">访问 LatteCloud</a></td>
-                    <td data-label="简要说明">高性价比 Trojan 机场，支持节点切换</td>
-                </tr>
-                <tr>
-                    <td data-label="服务名称">CoffeeCloud</td>
-                    <td data-label="最新优惠码">无</td>
-                    <td data-label="机场链接"><a href="https://pianyivpn.com/go/coffeecloud/" target="_blank" rel="noopener noreferrer">访问 CoffeeCloud</a></td>
-                    <td data-label="简要说明">节点合理分布，支持 Clash、Surge 等多客户端</td>
-                </tr>
-                <tr>
-                    <td data-label="服务名称">红莓网络 CMYNetwork</td>
-                    <td data-label="最新优惠码">无</td>
-                    <td data-label="机场链接"><a href="https://pianyivpn.com/go/hongmeiweb/" target="_blank" rel="noopener noreferrer">访问红莓网络</a></td>
-                    <td data-label="简要说明">支持中转回国节点、适合留学/出海</td>
-                </tr>
-                <tr>
-                    <td data-label="服务名称">Nice Cloud</td>
-                    <td data-label="最新优惠码">无</td>
-                    <td data-label="机场链接"><a href="https://pianyivpn.com/go/niceyun/" target="_blank" rel="noopener noreferrer">访问 Nice Cloud</a></td>
-                    <td data-label="简要说明">支持解锁流媒体与 ChatGPT，企业定制支持</td>
-                </tr>
-                <tr>
-                    <td data-label="服务名称">大哥云</td>
-                    <td data-label="最新优惠码">无</td>
-                    <td data-label="机场链接"><a href="https://pianyivpn.com/go/dageyun/" target="_blank" rel="noopener noreferrer">访问大哥云</a></td>
-                    <td data-label="简要说明">多地区高质量节点，性价比佳</td>
-                </tr>
-                <tr>
-                    <td data-label="服务名称">魔戒机场</td>
-                    <td data-label="最新优惠码">无</td>
-                    <td data-label="机场链接"><a href="https://pianyivpn.com/go/mojie/" target="_blank" rel="noopener noreferrer">访问魔戒机场</a></td>
-                    <td data-label="简要说明">支持流量包计费，适合轻度使用者</td>
-                </tr>
-                <tr>
-                    <td data-label="服务名称">WgetCloud</td>
-                    <td data-label="最新优惠码">无</td>
-                    <td data-label="机场链接"><a href="https://pianyivpn.com/go/WgetCloud/" target="_blank" rel="noopener noreferrer">访问 WgetCloud</a></td>
-                    <td data-label="简要说明">全球IEPL节点，视频流畅，速度稳定</td>
-                </tr>
-                <tr>
-                    <td data-label="服务名称">泡泡狗</td>
-                    <td data-label="最新优惠码">无</td>
-                    <td data-label="机场链接"><a href="https://pianyivpn.com/go/paopaogou/" target="_blank" rel="noopener noreferrer">访问 泡泡狗</a></td>
-                    <td data-label="简要说明">IPv6 支持全面，面向科研和外贸</td>
-                </tr>
-                <tr>
-                    <td data-label="服务名称">MESL</td>
-                    <td data-label="最新优惠码">无</td>
-                    <td data-label="机场链接"><a href="https://pianyivpn.com/go/mesl/" target="_blank" rel="noopener noreferrer">访问 MESL</a></td>
-                    <td data-label="简要说明">集成 VPS + 机场服务，适合技术用户</td>
-                </tr>
-                <tr>
-                    <td data-label="服务名称">闪电猫</td>
-                    <td data-label="最新优惠码">无</td>
-                    <td data-label="机场链接"><a href="https://pianyivpn.com/go/speedcat/" target="_blank" rel="noopener noreferrer">访问闪电猫</a></td>
-                    <td data-label="简要说明">专为手机端优化，节点较快</td>
-                </tr>
+            <h3 id="recommendations">性价比便宜机场</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>服务名称</th>
+                        <th>最新优惠码</th>
+                        <th>机场链接</th>
+                        <th>简要说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="服务名称">Gatern</td>
+                        <td data-label="最新优惠码"><code>65ZGFN29XB</code> (年付75折) <br> <code>OVP56BZ8E8</code> (其他85折)</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/gatern/" target="_blank" rel="noopener noreferrer">访问 Gatern</a></td>
+                        <td data-label="简要说明">IPLC 专线，全节点高性价比，支持小众国家线路</td>
+                    </tr>
+                    <tr>
+                        <td data-label="服务名称">飞鸟机场</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/flyingbird/" target="_blank" rel="noopener noreferrer">访问飞鸟机场</a></td>
+                        <td data-label="简要说明">纯IEPL中转，速度稳定，适合视频流畅观看</td>
+                    </tr>
+                    <tr>
+                        <td data-label="服务名称">Totoro Cloud</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/totoro/" target="_blank" rel="noopener noreferrer">访问 Totoro Cloud</a></td>
+                        <td data-label="简要说明">Trojan 协议为主，支持 GPT、流媒体</td>
+                    </tr>
+                    <tr>
+                        <td data-label="服务名称">觅云 MeCloud</td>
+                        <td data-label="最新优惠码">新用户有 9.9 元试用</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/mecloud/" target="_blank" rel="noopener noreferrer">访问觅云</a></td>
+                        <td data-label="简要说明">独服 IPLC+BGP，三年稳定运营，支持流媒体解锁</td>
+                    </tr>
+                    <tr>
+                        <td data-label="服务名称">Just My Socks</td>
+                        <td data-label="最新优惠码"><code>JMS9272283</code> (循环9.48折)</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/jms/" target="_blank" rel="noopener noreferrer">访问 Just My Socks</a></td>
+                        <td data-label="简要说明">搬瓦工官方机场，CN2 GIA 线路，不怕跑路</td>
+                    </tr>
+                    <tr>
+                        <td data-label="服务名称">LatteCloud</td>
+                        <td data-label="最新优惠码"><code>50off</code> (年付/半年付)</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/LatteCloud/" target="_blank" rel="noopener noreferrer">访问 LatteCloud</a></td>
+                        <td data-label="简要说明">高性价比 Trojan 机场，支持节点切换</td>
+                    </tr>
+                    <tr>
+                        <td data-label="服务名称">CoffeeCloud</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/coffeecloud/" target="_blank" rel="noopener noreferrer">访问 CoffeeCloud</a></td>
+                        <td data-label="简要说明">节点合理分布，支持 Clash、Surge 等多客户端</td>
+                    </tr>
+                    <tr>
+                        <td data-label="服务名称">红莓网络 CMYNetwork</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/hongmeiweb/" target="_blank" rel="noopener noreferrer">访问红莓网络</a></td>
+                        <td data-label="简要说明">支持中转回国节点、适合留学/出海</td>
+                    </tr>
+                    <tr>
+                        <td data-label="服务名称">Nice Cloud</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/niceyun/" target="_blank" rel="noopener noreferrer">访问 Nice Cloud</a></td>
+                        <td data-label="简要说明">支持解锁流媒体与 ChatGPT，企业定制支持</td>
+                    </tr>
+                    <tr>
+                        <td data-label="服务名称">大哥云</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/dageyun/" target="_blank" rel="noopener noreferrer">访问大哥云</a></td>
+                        <td data-label="简要说明">多地区高质量节点，性价比佳</td>
+                    </tr>
+                    <tr>
+                        <td data-label="服务名称">魔戒机场</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/mojie/" target="_blank" rel="noopener noreferrer">访问魔戒机场</a></td>
+                        <td data-label="简要说明">支持流量包计费，适合轻度使用者</td>
+                    </tr>
+                    <tr>
+                        <td data-label="服务名称">WgetCloud</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/WgetCloud/" target="_blank" rel="noopener noreferrer">访问 WgetCloud</a></td>
+                        <td data-label="简要说明">全球IEPL节点，视频流畅，速度稳定</td>
+                    </tr>
+                    <tr>
+                        <td data-label="服务名称">泡泡狗</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/paopaogou/" target="_blank" rel="noopener noreferrer">访问 泡泡狗</a></td>
+                        <td data-label="简要说明">IPv6 支持全面，面向科研和外贸</td>
+                    </tr>
+                    <tr>
+                        <td data-label="服务名称">MESL</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/mesl/" target="_blank" rel="noopener noreferrer">访问 MESL</a></td>
+                        <td data-label="简要说明">集成 VPS + 机场服务，适合技术用户</td>
+                    </tr>
+                    <tr>
+                        <td data-label="服务名称">闪电猫</td>
+                        <td data-label="最新优惠码">无</td>
+                        <td data-label="机场链接"><a href="https://pianyivpn.com/go/speedcat/" target="_blank" rel="noopener noreferrer">访问闪电猫</a></td>
+                        <td data-label="简要说明">专为手机端优化，节点较快</td>
+                    </tr>
                  <tr>
                     <td data-label="服务名称">SSRDOG</td>
                     <td data-label="最新优惠码">无</td>
@@ -365,4 +1005,210 @@ description: 机场云专为跨境电商、流媒体（Netflix/Hulu/YouTube/TikT
 </div>
 
 <!-- === Footer区域 === -->
-{% include footer.html %}
+<footer class="site-footer">
+    <p>Copyright © 2025 机场云. All Rights Reserved.</p>
+    <div class="footer-credits">
+        <span>本页面及所有内容由</span>
+        <a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer" title="Google Gemini AI">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.064-.955L12 .5l3.35 7.337 8.064.955-5.935 5.488 1.575 7.928z"/></svg>
+            <span>Google Gemini AI</span>
+        </a>
+        <span>生成</span>
+    </div>
+    <div class="footer-hosting">
+        <span>托管在</span>
+        <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer" title="GitHub Pages">
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></svg>
+            <span>GitHub Pages</span>
+        </a>
+    </div>
+</footer>
+
+<!-- 
+============================================================
+=== 第三方代码管理中心：未来所有代码请在此处修改 ===
+============================================================
+-->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // --- 网站集成配置 ---
+        const siteIntegrationConfig = {
+            // 1. Google Search Console 验证代码 (将 YOUR_CODE 替换为你的代码)
+            googleSiteVerification: `<!-- <meta name="google-site-verification" content="YOUR_CODE" /> -->`,
+
+            // 2. Bing Webmaster / IndexNow 验证代码 (将 YOUR_CODE 替换为你的代码)
+            bingSiteVerification: `<!-- <meta name="msvalidate.01" content="YOUR_CODE" /> -->`,
+
+            // 3. Google Analytics (GA4) 跟踪代码 (将 G-XXXXXXXXXX 替换为你的 GA4 Measurement ID)
+            googleAnalytics: `
+                <!-- Google Analytics -->
+                <!--
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"><\/script>
+                <script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-XXXXXXXXXX');
+                <\/script>
+                -->
+            `
+        };
+
+        // --- 广告配置 ---
+        const adConfig = {
+            banner1: `<span>横幅广告位 1 (1360x90)</span>`,
+            banner2: `<span>横幅广告位 2 (1360x90)</span>`,
+            sidebar: `<span>侧边栏广告位</span>`
+        };
+
+
+        // --- 下方的代码负责将配置注入页面，无需修改 ---
+        
+        // 注入网站集成代码
+        if (siteIntegrationConfig.googleSiteVerification) {
+            document.head.insertAdjacentHTML('beforeend', siteIntegrationConfig.googleSiteVerification);
+        }
+        if (siteIntegrationConfig.bingSiteVerification) {
+            document.head.insertAdjacentHTML('beforeend', siteIntegrationConfig.bingSiteVerification);
+        }
+        if (siteIntegrationConfig.googleAnalytics) {
+            document.head.insertAdjacentHTML('beforeend', siteIntegrationConfig.googleAnalytics);
+        }
+
+        // 注入广告代码
+        const adBanner1 = document.getElementById('ad-banner-1');
+        if (adBanner1) {
+            adBanner1.innerHTML = adConfig.banner1;
+        }
+        const adBanner2 = document.getElementById('ad-banner-2');
+        if (adBanner2) {
+            adBanner2.innerHTML = adConfig.banner2;
+        }
+        const adSidebar = document.getElementById('ad-sidebar');
+        if (adSidebar) {
+            adSidebar.innerHTML = adConfig.sidebar;
+        }
+    });
+</script>
+
+<!-- 
+============================================================
+=== 访客提示弹窗脚本 (每次访问都尝试弹出) ===
+============================================================
+-->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('visitor-warning-modal');
+        const closeButton = document.getElementById('modal-close-button');
+        
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        closeButton.addEventListener('click', closeModal);
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // IP API端点列表，提供备用
+        const ipApiEndpoints = [
+            'https://ip-api.com/json/?fields=status,countryCode',
+            'https://ipapi.co/json/'
+        ];
+
+        // 尝试从API获取地理位置的函数
+        async function fetchLocation(endpoints) {
+            for (const url of endpoints) {
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    const data = await response.json();
+                    
+                    const countryCode = data.countryCode || data.country_code;
+
+                    if (countryCode === 'CN') {
+                         modal.style.display = 'flex';
+                         break;
+                    } else {
+                         break;
+                    }
+                } catch (error) {
+                    // Updated error handling: Log a non-disruptive message
+                    console.log('Could not fetch IP location from ' + url + '. This is expected in some environments or with ad blockers.');
+                }
+            }
+        }
+        
+        fetchLocation(ipApiEndpoints);
+    });
+</script>
+
+<!-- 
+============================================================
+=== 文章推荐模块脚本 ===
+============================================================
+-->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- 文章数据中心 ---
+        // 未来，您可以用 Jekyll 的真实数据替换这个模拟数据
+        const allPosts = [
+            { title: "2025年最佳Netflix机场推荐", url: "/netflix-airports-2025/", views: 1520 },
+            { title: "如何为跨境电商选择稳定的专线机场？", url: "/ecommerce-airport-guide/", views: 1210 },
+            { title: "ChatGPT 和 Gemini AI 专用机场评测", url: "/ai-airport-review/", views: 980 },
+            { title: "TikTok 直播与运营网络解决方案", url: "/tiktok-live-network/", views: 1850 },
+            { title: "IPLC/IEPL 专线机场是什么？", url: "/what-is-iplc/", views: 850 },
+            { title: "Clash Verge 使用教程与规则推荐", url: "/clash-verge-tutorial/", views: 2500 },
+            { title: "Shadowrocket (小火箭) 进阶技巧", url: "/shadowrocket-tips/", views: 2100 },
+            { title: "V2Ray 与 Trojan 协议深度对比", url: "/v2ray-vs-trojan/", views: 730 },
+            { title: "Hysteria2 协议配置指南", url: "/hysteria2-guide/", views: 650 },
+            { title: "流媒体合租平台避坑指南", url: "/streaming-sharing-guide/", views: 3200 },
+            { title: "如何测试机场线路的真实速度？", url: "/airport-speed-test/", views: 550 },
+            { title: "备用机场的重要性与选择策略", url: "/backup-airport-strategy/", views: 420 }
+        ];
+
+        // --- 下方的代码负责筛选和显示文章，无需修改 ---
+        
+        // 随机打乱数组
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function populateList(elementId, posts) {
+            const listElement = document.getElementById(elementId);
+            if (!listElement) return;
+            
+            let html = '';
+            posts.forEach(post => {
+                html += `<li><a href="${post.url}">${post.title}</a></li>`;
+            });
+            listElement.innerHTML = html;
+        }
+
+        // 复制并打乱文章数组
+        let remainingPosts = [...allPosts];
+        shuffleArray(remainingPosts);
+
+        // 1. 最新文章 (假设前5篇是按日期排序的)
+        const latestPosts = remainingPosts.splice(0, 5);
+        populateList('latest-articles-list', latestPosts);
+
+        // 2. 最热文章 (从剩余文章中按浏览量排序)
+        remainingPosts.sort((a, b) => b.views - a.views);
+        const hottestPosts = remainingPosts.splice(0, 5);
+        populateList('hottest-articles-list', hottestPosts);
+
+        // 3. 随机文章 (直接使用剩余的)
+        const randomPosts = remainingPosts.slice(0, 5);
+        populateList('random-articles-list', randomPosts);
+    });
+</script>
+
+</body>
+</html>
