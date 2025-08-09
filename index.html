@@ -51,22 +51,16 @@ description: 机场云专为跨境电商、流媒体（Netflix/Hulu/YouTube/TikT
     
 <!-- === 文章推荐模块 (Jekyll Liquid 实现) === -->
 {% assign all_posts = site.posts %}
-
-<!-- 1. 最新文章 -->
 {% assign latest_posts = all_posts | sort: "date" | reverse | limit: 3 %}
 {% assign used_urls = "" | split: "," %}
 {% for post in latest_posts %}
     {% assign used_urls = used_urls | push: post.url %}
 {% endfor %}
-
-<!-- 2. 最热文章 -->
 {% assign remaining_for_hot = all_posts | where_exp: "post", "used_urls contains post.url == false" %}
 {% assign hottest_posts = remaining_for_hot | sort: "views" | reverse | limit: 5 %}
 {% for post in hottest_posts %}
     {% assign used_urls = used_urls | push: post.url %}
 {% endfor %}
-
-<!-- 3. 随机文章 -->
 {% assign remaining_for_random = all_posts | where_exp: "post", "used_urls contains post.url == false" %}
 {% assign random_posts = remaining_for_random | sample: 5 %}
 
