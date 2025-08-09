@@ -1,0 +1,49 @@
+# 工作流名称
+name: Deploy Jekyll site to Pages
+
+# 触发条件：当有代码推送到 main 分支时自动运行
+on:
+  push:
+    branches: ["main"]
+  # 允许你手动在 Actions 标签页运行这个工作流
+  workflow_dispatch:
+
+# 设置权限，允许工作流部署到 GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 设置并发控制，确保同一时间只有一个部署在运行
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # 构建任务
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1' # 你可以根据需要修改 Ruby 版本
+          bundler-cache: true # 自动缓存和安装 gems
+      - name: Build with Jekyll
+        run: bundle exec jekyll build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  # 部署任务
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
